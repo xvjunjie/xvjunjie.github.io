@@ -19,24 +19,29 @@ tags: Django
     + mkvirtualenv 虚拟环境名称 
     
     + 栗子(创建成功后会自动工作在这个虚拟环境上)：
-    + mkvirtualenv py_django
+    + mkvirtualenv py_django 
+     
     {% qnimg mk.png %}
 
 - 退出虚拟环境的命令如下：
-    + deactivate
+    + deactivate  
+    
     {% qnimg deactivate.png %}
 
 
 - 查看所有虚拟环境的命令如下：
-    + workon
+    + workon  
+
     {% qnimg workon.png %}
 
 - 使用虚拟环境的命令如下：
-    + workon 虚拟环境名称
-    {% qnimg workon_one %}
+    + workon 虚拟环境名称  
+
+    {% qnimg workon_one.png %}
 
 - 删除虚拟环境的命令如下：
-    + rmvirtualenv 虚拟环境名称
+    + rmvirtualenv 虚拟环境名称  
+
     {% qnimg del.png %}
 
 
