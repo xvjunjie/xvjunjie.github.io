@@ -1,5 +1,5 @@
 ---
-title: Linux命令1——常用基本命令
+title: Linux命令1-常用基本命令
 date: 2018-07-22 
 tags: Linux
 toc: true

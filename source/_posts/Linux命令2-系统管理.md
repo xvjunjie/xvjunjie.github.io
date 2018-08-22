@@ -1,5 +1,5 @@
 ---
-title: Linux命令2——常用系统管理
+title: Linux命令2-常用系统管理
 date: 2018-08-18 15:35:57
 tags: Linux
 toc: true

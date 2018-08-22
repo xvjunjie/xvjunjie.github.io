@@ -140,7 +140,7 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Linux命令2——系统管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Django1-入门篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -150,13 +150,13 @@
 	    
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/18/Linux命令2——系统管理/">Linux命令2——常用系统管理</a>
+      <a class="article-title" href="/2018/08/22/Django1-入门篇/">Django1-入门篇1</a>
     </h1>
   
 
 	    
-	    <a href="/2018/08/18/Linux命令2——系统管理/" class="archive-article-date">
-  	<time datetime="2018-08-18T07:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-18</time>
+	    <a href="/2018/08/22/Django1-入门篇/" class="archive-article-date">
+  	<time datetime="2018-08-22T15:06:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
 </a>
 	    
 	  </header>
@@ -169,10 +169,70 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="查看进程信息-ps"><a href="#查看进程信息-ps" class="headerlink" title="查看进程信息:ps"></a>查看进程信息:ps</h3><p>　　进程是一个具有一定独立功能的程序，它是操作系统动态执行的基本单元。　　<br>　　ps命令可以查看进程的详细状况，常用选项如下(选项可以不加“-”)：<br>
-        
-          <a class="article-more-a" href="/2018/08/18/Linux命令2——系统管理/#more">more >></a>
-        
+        <h2 id="一-搭建虚拟环境"><a href="#一-搭建虚拟环境" class="headerlink" title="一. 搭建虚拟环境"></a>一. 搭建虚拟环境</h2><ul>
+<li>搭建虚拟环境的目的是为了避免：当我们想开发多个不同的项目，需要用到同一个包的不同版本时，  如果在同一个目录安装或更新，可能造成其他的项目无法运行</li>
+<li>虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响</li>
+<li>所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下</li>
+</ul>
+<h3 id="1-创建虚拟环境"><a href="#1-创建虚拟环境" class="headerlink" title="1. 创建虚拟环境"></a>1. 创建虚拟环境</h3><ul>
+<li><p>安装虚拟环境的命令如下：</p>
+<ul>
+<li>sudo pip install virtualenv</li>
+<li>sudo pip install virtualenvwrapper</li>
+</ul>
+</li>
+<li><p>创建虚拟环境的命令如下:</p>
+<ul>
+<li><p>mkvirtualenv 虚拟环境名称 </p>
+</li>
+<li><p>栗子(创建成功后会自动工作在这个虚拟环境上)：</p>
+</li>
+<li>mkvirtualenv py_django<img src="http://pdp5bkqjj.bkt.clouddn.com/images/mk.png">
+</li>
+</ul>
+</li>
+<li><p>退出虚拟环境的命令如下：</p>
+<ul>
+<li>deactivate<img src="http://pdp5bkqjj.bkt.clouddn.com/images/deactivate.png">
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>查看所有虚拟环境的命令如下：</p>
+<ul>
+<li>workon<img src="http://pdp5bkqjj.bkt.clouddn.com/images/workon.png">
+</li>
+</ul>
+</li>
+<li><p>使用虚拟环境的命令如下：</p>
+<ul>
+<li>workon 虚拟环境名称<img src="http://pdp5bkqjj.bkt.clouddn.com/images/workon_one">
+</li>
+</ul>
+</li>
+<li><p>删除虚拟环境的命令如下：</p>
+<ul>
+<li>rmvirtualenv 虚拟环境名称<img src="http://pdp5bkqjj.bkt.clouddn.com/images/del.png">
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-安装django包"><a href="#二-安装django包" class="headerlink" title="二. 安装django包"></a>二. 安装django包</h2><ul>
+<li><p>先按前面创建虚拟环境的命名创建一个虚拟环境</p>
+<ul>
+<li>mkvirtualenv py_django</li>
+</ul>
+</li>
+<li><p>安装Django包命令如下：</p>
+<ul>
+<li>pip install django</li>
+<li>（通过上面命令安装的版本是最新的版本，也可以通过下面的命令安装指定的版本）</li>
+<li>栗子：pip install django==1.11.3</li>
+</ul>
+</li>
+</ul>
+
       
 
       
@@ -185,7 +245,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
         		</li>
       		
 		</ul>
@@ -195,7 +255,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/18/Linux命令2——系统管理/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/22/Django1-入门篇/">展开全文 >></a>
         </p>
       
 
@@ -224,7 +284,7 @@
 
 
   
-    <article id="post-Linux命令1——常用基本命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Linux命令2-系统管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -234,13 +294,13 @@
 	    
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/22/Linux命令1——常用基本命令/">Linux命令1——常用基本命令</a>
+      <a class="article-title" href="/2018/08/18/Linux命令2-系统管理/">Linux命令2-常用系统管理</a>
     </h1>
   
 
 	    
-	    <a href="/2018/07/22/Linux命令1——常用基本命令/" class="archive-article-date">
-  	<time datetime="2018-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
+	    <a href="/2018/08/18/Linux命令2-系统管理/" class="archive-article-date">
+  	<time datetime="2018-08-18T07:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-18</time>
 </a>
 	    
 	  </header>
@@ -253,9 +313,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-命令的使用方法"><a href="#1-命令的使用方法" class="headerlink" title="1. 命令的使用方法"></a>1. 命令的使用方法</h3><p>　　command  [-options][parameter1] …　<br>　　说明：<br>　　command：命令名,相应功能的英文单词或单词的缩写<br>　　[-options]：选项,可用来对命令进行控制，也可以省略<br>　　[]代表可选 parameter1 …：传给命令的参数（可以是零个，一个，或多个）<br>
+        <h3 id="查看进程信息-ps"><a href="#查看进程信息-ps" class="headerlink" title="查看进程信息:ps"></a>查看进程信息:ps</h3><p>　　进程是一个具有一定独立功能的程序，它是操作系统动态执行的基本单元。　　<br>　　ps命令可以查看进程的详细状况，常用选项如下(选项可以不加“-”)：<br>
         
-          <a class="article-more-a" href="/2018/07/22/Linux命令1——常用基本命令/#more">more >></a>
+          <a class="article-more-a" href="/2018/08/18/Linux命令2-系统管理/#more">more >></a>
         
       
 
@@ -279,7 +339,91 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/22/Linux命令1——常用基本命令/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/18/Linux命令2-系统管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-Linux命令1-常用基本命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+
+	   
+	  <header class="article-header">
+	    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/22/Linux命令1-常用基本命令/">Linux命令1-常用基本命令</a>
+    </h1>
+  
+
+	    
+	    <a href="/2018/07/22/Linux命令1-常用基本命令/" class="archive-article-date">
+  	<time datetime="2018-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
+</a>
+	    
+	  </header>
+	
+	<!-- 目录内容 -->
+	
+	<!-- 目录内容结束 -->
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-命令的使用方法"><a href="#1-命令的使用方法" class="headerlink" title="1. 命令的使用方法"></a>1. 命令的使用方法</h3><p>　　command  [-options][parameter1] …　<br>　　说明：<br>　　command：命令名,相应功能的英文单词或单词的缩写<br>　　[-options]：选项,可用来对命令进行控制，也可以省略<br>　　[]代表可选 parameter1 …：传给命令的参数（可以是零个，一个，或多个）<br>
+        
+          <a class="article-more-a" href="/2018/07/22/Linux命令1-常用基本命令/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/22/Linux命令1-常用基本命令/">展开全文 >></a>
         </p>
       
 
@@ -405,6 +549,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
