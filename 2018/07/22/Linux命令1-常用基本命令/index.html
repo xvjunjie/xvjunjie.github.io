@@ -6,24 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xvjunjie.github.io">
-  <title>Linux命令2——常用系统管理 | xvjunjie的博客</title>
+  <title>Linux命令1-常用基本命令 | xvjunjie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="查看进程信息:ps　　进程是一个具有一定独立功能的程序，它是操作系统动态执行的基本单元。　　　　ps命令可以查看进程的详细状况，常用选项如下(选项可以不加“-”)：">
+  <meta name="description" content="1. 命令的使用方法　　command  [-options][parameter1] …　　　说明：　　command：命令名,相应功能的英文单词或单词的缩写　　[-options]：选项,可用来对命令进行控制，也可以省略　　[]代表可选 parameter1 …：传给命令的参数（可以是零个，一个，或多个）">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux命令2——常用系统管理">
-<meta property="og:url" content="https://xvjunjie.github.io/2018/08/18/Linux命令2——系统管理/index.html">
+<meta property="og:title" content="Linux命令1-常用基本命令">
+<meta property="og:url" content="https://xvjunjie.github.io/2018/07/22/Linux命令1-常用基本命令/index.html">
 <meta property="og:site_name" content="xvjunjie的博客">
-<meta property="og:description" content="查看进程信息:ps　　进程是一个具有一定独立功能的程序，它是操作系统动态执行的基本单元。　　　　ps命令可以查看进程的详细状况，常用选项如下(选项可以不加“-”)：">
+<meta property="og:description" content="1. 命令的使用方法　　command  [-options][parameter1] …　　　说明：　　command：命令名,相应功能的英文单词或单词的缩写　　[-options]：选项,可用来对命令进行控制，也可以省略　　[]代表可选 parameter1 …：传给命令的参数（可以是零个，一个，或多个）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/ps.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/ifconfig.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/ping.png">
-<meta property="og:updated_time" content="2018-08-19T14:03:28.143Z">
+<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/ls.png">
+<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/help.png">
+<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/man.png">
+<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/key.png">
+<meta property="og:updated_time" content="2018-08-22T16:09:02.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux命令2——常用系统管理">
-<meta name="twitter:description" content="查看进程信息:ps　　进程是一个具有一定独立功能的程序，它是操作系统动态执行的基本单元。　　　　ps命令可以查看进程的详细状况，常用选项如下(选项可以不加“-”)：">
-<meta name="twitter:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/ps.png">
+<meta name="twitter:title" content="Linux命令1-常用基本命令">
+<meta name="twitter:description" content="1. 命令的使用方法　　command  [-options][parameter1] …　　　说明：　　command：命令名,相应功能的英文单词或单词的缩写　　[-options]：选项,可用来对命令进行控制，也可以省略　　[]代表可选 parameter1 …：传给命令的参数（可以是零个，一个，或多个）">
+<meta name="twitter:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/ls.png">
   
     <link rel="alternative" href="/atom.xml" title="xvjunjie的博客" type="application/atom+xml">
   
@@ -143,7 +144,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Linux命令2——系统管理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux命令1-常用基本命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -153,13 +154,13 @@
 	    
   
     <h1 class="article-title" itemprop="name">
-      Linux命令2——常用系统管理
+      Linux命令1-常用基本命令
     </h1>
   
 
 	    
-	    <a href="/2018/08/18/Linux命令2——系统管理/" class="archive-article-date">
-  	<time datetime="2018-08-18T07:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-18</time>
+	    <a href="/2018/07/22/Linux命令1-常用基本命令/" class="archive-article-date">
+  	<time datetime="2018-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
 </a>
 	    
 	  </header>
@@ -173,7 +174,7 @@
 	  <div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 	    <strong class="toc-title">文章目录</strong>
-	     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看进程信息-ps"><span class="toc-number">1.</span> <span class="toc-text">查看进程信息:ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态显示进程-top"><span class="toc-number">2.</span> <span class="toc-text">动态显示进程:top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终止进程：kill"><span class="toc-number">3.</span> <span class="toc-text">终止进程：kill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看或配置网卡信息：ifconfig"><span class="toc-number">4.</span> <span class="toc-text">查看或配置网卡信息：ifconfig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试远程主机连通性：ping"><span class="toc-number">5.</span> <span class="toc-text">测试远程主机连通性：ping</span></a></li></ol>
+	     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令的使用方法"><span class="toc-number">1.</span> <span class="toc-text">1. 命令的使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-查看帮助文档"><span class="toc-number">2.</span> <span class="toc-text">2. 查看帮助文档</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-–help"><span class="toc-number">2.1.</span> <span class="toc-text">2-1 –help</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-man"><span class="toc-number">2.2.</span> <span class="toc-text">2-2 man</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-自动补全"><span class="toc-number">3.</span> <span class="toc-text">3. 自动补全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-历史命令"><span class="toc-number">4.</span> <span class="toc-text">4. 历史命令</span></a></li></ol>
 	   </div>
 	   <script type="text/javascript">
 	      function showToc(){
@@ -196,20 +197,19 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="查看进程信息-ps"><a href="#查看进程信息-ps" class="headerlink" title="查看进程信息:ps"></a>查看进程信息:ps</h3><p>　　进程是一个具有一定独立功能的程序，它是操作系统动态执行的基本单元。　　<br>　　ps命令可以查看进程的详细状况，常用选项如下(选项可以不加“-”)：<br><a id="more"></a><br>　　<strong>选项</strong>    <strong>含义</strong><br>　　-a  显示终端上的所有进程，包括其他用户的进程<br>　　-u  显示进程的详细状态<br>　　-x  显示没有控制终端的进程<br>　　-w  显示加宽，以便显示更多的信息<br>　　-r  只显示正在运行的进程  </p>
-<p>　　栗子：<br>　　<img src="http://pdp5bkqjj.bkt.clouddn.com/images/ps.png">
-　　</p>
-<h3 id="动态显示进程-top"><a href="#动态显示进程-top" class="headerlink" title="动态显示进程:top"></a>动态显示进程:top</h3><p>　　top命令用来动态显示运行中的进程。top命令能够在运行后，在指定的时间间隔更新显示信息。  　　可以在使用top命令时加上-d 来指定显示信息更新的时间间隔。　　<br>　　在top命令执行后，可以按下按键得到对显示的结果进行排序：  </p>
-<p>　　<br>　　<strong>按键</strong>    <strong>含义</strong><br>　　M   根据内存使用量来排序<br>　　P   根据CPU占有率来排序<br>　　T   根据进程运行时间的长短来排序<br>　　U   可以根据后面输入的用户名来筛选进程<br>　　K   可以根据后面输入的PID来杀死进程。<br>　　q   退出<br>　　h   获得帮助  </p>
-<p>　　</p>
-<h3 id="终止进程：kill"><a href="#终止进程：kill" class="headerlink" title="终止进程：kill"></a>终止进程：kill</h3><p>　　kill命令指定进程号的进程，需要配合 ps 使用。 </p>
-<p>　　使用格式：<br>　　kill [-signal] pid<br>　　信号值从0到15，其中9为绝对终止，可以处理一般信号无法终止的进程。<br>　　（有些进程不能直接杀死，这时候我们需要加一个参数“ -9 ”，“ -9 ” 代表强制结束：） </p>
-<p>　　kill 9133 ：（9133 为应用程序所对应的进程号） </p>
-<p>　　</p>
-<h3 id="查看或配置网卡信息：ifconfig"><a href="#查看或配置网卡信息：ifconfig" class="headerlink" title="查看或配置网卡信息：ifconfig"></a>查看或配置网卡信息：ifconfig</h3><p>　　ifconfig，它会显示所有网卡的信息<br>　　栗子:<br>　　<img src="http://pdp5bkqjj.bkt.clouddn.com/images/ifconfig.png"></p>
-<h3 id="测试远程主机连通性：ping"><a href="#测试远程主机连通性：ping" class="headerlink" title="测试远程主机连通性：ping"></a>测试远程主机连通性：ping</h3><p>　　栗子:<br>　　<img src="http://pdp5bkqjj.bkt.clouddn.com/images/ping.png">
-　　
-　　</p>
+        <h3 id="1-命令的使用方法"><a href="#1-命令的使用方法" class="headerlink" title="1. 命令的使用方法"></a>1. 命令的使用方法</h3><p>　　command  [-options][parameter1] …　<br>　　说明：<br>　　command：命令名,相应功能的英文单词或单词的缩写<br>　　[-options]：选项,可用来对命令进行控制，也可以省略<br>　　[]代表可选 parameter1 …：传给命令的参数（可以是零个，一个，或多个）<br><a id="more"></a>　　</p>
+<p>　　栗子：<br>　　　　ls会列出当前工作目录的内容（文件或文件夹，就跟在GUI中打开一个文件夹看到的内容一样）<br>　　　　<img src="http://pdp5bkqjj.bkt.clouddn.com/images/ls.png"></p>
+<h3 id="2-查看帮助文档"><a href="#2-查看帮助文档" class="headerlink" title="2. 查看帮助文档"></a>2. 查看帮助文档</h3><h4 id="2-1-–help"><a href="#2-1-–help" class="headerlink" title="2-1 –help"></a>2-1 –help</h4><p>　　有时候我们不知道一个命令该怎么用的时候，我们可以通过帮助文档来查看帮助信息</p>
+<p>　　栗子：<br>　　　　ls  –help<br>　　　　<img src="http://pdp5bkqjj.bkt.clouddn.com/images/help.png"></p>
+<h4 id="2-2-man"><a href="#2-2-man" class="headerlink" title="2-2 man"></a>2-2 man</h4><p>　　man是linux提供的一个手册，包含了绝大部分的命令、函数使用说明<br>　　该手册分成很多章节（section），使用man时可以指定不同的章节来浏览。</p>
+<p>　　man中各个section意义如下：<br>　　　　1. Standard commands（标准命令）<br>　　　　2. System calls（系统调用，如open,write）<br>　　　　3. Library functions（库函数，如printf,fopen）<br>　　　　4. Special devices（设备文件的说明，/dev下各种设备）<br>　　　　5. File formats（文件格式，如passwd）<br>　　　　6. Games and toys（游戏和娱乐）　　　　<br>　　　　7. Miscellaneous（杂项、惯例与协定等，例如Linux档案系统、网络协定、ASCII码；environ全局变量）<br>　　　　8. Administrative Commands（管理员命令，如ifconfig）
+　　　
+　　　</p>
+<p>　　栗子：<br>　　　　man ls<br>　　　　<img src="http://pdp5bkqjj.bkt.clouddn.com/images/man.png">
+　</p>
+<p>　　man是按照手册的章节号的顺序进行搜索的。<br>　　man设置了如下的功能键：<br>　　<img src="http://pdp5bkqjj.bkt.clouddn.com/images/key.png"></p>
+<h3 id="3-自动补全"><a href="#3-自动补全" class="headerlink" title="3. 自动补全"></a>3. 自动补全</h3><p>　　在敲出命令的前几个字母的同时，按下tab键，系统会自动帮我们补全命令</p>
+<h3 id="4-历史命令"><a href="#4-历史命令" class="headerlink" title="4. 历史命令"></a>4. 历史命令</h3><p>　　当系统执行过一些命令后，可按上下键翻看以前的命令，history将执行过的命令列举出来</p>
 
       
 
@@ -242,11 +242,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2018/07/22/Linux命令1——常用基本命令/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux命令1——常用基本命令</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2018/08/18/Linux命令2-系统管理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux命令2-常用系统管理
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -271,7 +275,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看进程信息-ps"><span class="toc-number">1.</span> <span class="toc-text">查看进程信息:ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态显示进程-top"><span class="toc-number">2.</span> <span class="toc-text">动态显示进程:top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终止进程：kill"><span class="toc-number">3.</span> <span class="toc-text">终止进程：kill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看或配置网卡信息：ifconfig"><span class="toc-number">4.</span> <span class="toc-text">查看或配置网卡信息：ifconfig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试远程主机连通性：ping"><span class="toc-number">5.</span> <span class="toc-text">测试远程主机连通性：ping</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-命令的使用方法"><span class="toc-number">1.</span> <span class="toc-text">1. 命令的使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-查看帮助文档"><span class="toc-number">2.</span> <span class="toc-text">2. 查看帮助文档</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-–help"><span class="toc-number">2.1.</span> <span class="toc-text">2-1 –help</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-man"><span class="toc-number">2.2.</span> <span class="toc-text">2-2 man</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-自动补全"><span class="toc-number">3.</span> <span class="toc-text">3. 自动补全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-历史命令"><span class="toc-number">4.</span> <span class="toc-text">4. 历史命令</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -386,6 +390,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
