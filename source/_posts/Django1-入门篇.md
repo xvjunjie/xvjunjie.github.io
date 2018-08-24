@@ -1,5 +1,5 @@
 ---
-title: Django1-入门篇1
+title: Django1-基础篇1
 date: 2018-08-22 23:06:33
 tags: Django
 ---
@@ -9,7 +9,7 @@ tags: Django
 - 虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响
 - 所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下
 
-
+<!--more-->
 ### 1. 创建虚拟环境
 - 安装虚拟环境的命令如下：
     + sudo pip install virtualenv
