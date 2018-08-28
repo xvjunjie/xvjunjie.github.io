@@ -1,5 +1,5 @@
 ---
-title: Django1-基础篇1
+title: Django-基础篇1
 date: 2018-08-22 23:06:33
 tags: Django
 ---
