@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xvjunjie.github.io">
-  <title>Django1-入门篇1 | xvjunjie的博客</title>
+  <title>Django-基础篇1 | xvjunjie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一. 搭建虚拟环境 搭建虚拟环境的目的是为了避免：当我们想开发多个不同的项目，需要用到同一个包的不同版本时，  如果在同一个目录安装或更新，可能造成其他的项目无法运行 虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响 所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下  1. 创建虚拟环境 安装虚拟环境的命令如下：  sudo pip in">
+  <meta name="description" content="一. 搭建虚拟环境 搭建虚拟环境的目的是为了避免：当我们想开发多个不同的项目，需要用到同一个包的不同版本时，  如果在同一个目录安装或更新，可能造成其他的项目无法运行 虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响 所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下">
 <meta name="keywords" content="Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django1-入门篇1">
-<meta property="og:url" content="https://xvjunjie.github.io/2018/08/22/Django1-入门篇/index.html">
+<meta property="og:title" content="Django-基础篇1">
+<meta property="og:url" content="https://xvjunjie.github.io/2018/08/22/Django-基础篇1/index.html">
 <meta property="og:site_name" content="xvjunjie的博客">
-<meta property="og:description" content="一. 搭建虚拟环境 搭建虚拟环境的目的是为了避免：当我们想开发多个不同的项目，需要用到同一个包的不同版本时，  如果在同一个目录安装或更新，可能造成其他的项目无法运行 虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响 所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下  1. 创建虚拟环境 安装虚拟环境的命令如下：  sudo pip in">
+<meta property="og:description" content="一. 搭建虚拟环境 搭建虚拟环境的目的是为了避免：当我们想开发多个不同的项目，需要用到同一个包的不同版本时，  如果在同一个目录安装或更新，可能造成其他的项目无法运行 虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响 所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/mk.png">
 <meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/deactivate.png">
 <meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/workon.png">
 <meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/workon_one.png">
 <meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/del.png">
-<meta property="og:updated_time" content="2018-08-22T16:21:24.776Z">
+<meta property="og:updated_time" content="2018-08-28T17:52:55.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Django1-入门篇1">
-<meta name="twitter:description" content="一. 搭建虚拟环境 搭建虚拟环境的目的是为了避免：当我们想开发多个不同的项目，需要用到同一个包的不同版本时，  如果在同一个目录安装或更新，可能造成其他的项目无法运行 虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响 所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下  1. 创建虚拟环境 安装虚拟环境的命令如下：  sudo pip in">
+<meta name="twitter:title" content="Django-基础篇1">
+<meta name="twitter:description" content="一. 搭建虚拟环境 搭建虚拟环境的目的是为了避免：当我们想开发多个不同的项目，需要用到同一个包的不同版本时，  如果在同一个目录安装或更新，可能造成其他的项目无法运行 虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响 所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下">
 <meta name="twitter:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/mk.png">
   
     <link rel="alternative" href="/atom.xml" title="xvjunjie的博客" type="application/atom+xml">
@@ -145,7 +145,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Django1-入门篇" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Django-基础篇1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -155,12 +155,12 @@
 	    
   
     <h1 class="article-title" itemprop="name">
-      Django1-入门篇1
+      Django-基础篇1
     </h1>
   
 
 	    
-	    <a href="/2018/08/22/Django1-入门篇/" class="archive-article-date">
+	    <a href="/2018/08/22/Django-基础篇1/" class="archive-article-date">
   	<time datetime="2018-08-22T15:06:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
 </a>
 	    
@@ -179,6 +179,7 @@
 <li>虚拟环境可以搭建独立的Python运行环境，使得单个项目的运行环境与其他项目互不影响</li>
 <li>所有的虚拟环境，都位于/home/下的隐藏目录.virtualenvs下</li>
 </ul>
+<a id="more"></a>
 <h3 id="1-创建虚拟环境"><a href="#1-创建虚拟环境" class="headerlink" title="1. 创建虚拟环境"></a>1. 创建虚拟环境</h3><ul>
 <li><p>安装虚拟环境的命令如下：</p>
 <ul>
@@ -273,6 +274,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/08/28/Djang-基础篇2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Djang-基础篇2
+        
+      </div>
+    </a>
   
   
     <a href="/2018/08/18/Linux命令2-系统管理/" id="article-nav-older" class="article-nav-link-wrap">
@@ -420,11 +430,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
