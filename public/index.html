@@ -140,7 +140,7 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Djang-基础篇2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Django-基础篇5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -150,12 +150,384 @@
 	    
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/28/Djang-基础篇2/">Djang-基础篇2</a>
+      <a class="article-title" href="/2018/08/30/Django-基础篇5/">Django-基础篇5-表单</a>
     </h1>
   
 
 	    
-	    <a href="/2018/08/28/Djang-基础篇2/" class="archive-article-date">
+	    <a href="/2018/08/30/Django-基础篇5/" class="archive-article-date">
+  	<time datetime="2018-08-29T16:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
+</a>
+	    
+	  </header>
+	
+	<!-- 目录内容 -->
+	
+	<!-- 目录内容结束 -->
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>表单字段</p>
+<ul>
+<li>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/fields.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/fields.html</a></li>
+</ul>
+</li>
+<li><p>表单验证</p>
+</li>
+<li><p>表单API</p>
+</li>
+<li><p>一个简单的表单</p>
+<ul>
+<li><p>投票详细页面的模板（“polls/detail.html”）</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">polls/templates/polls/detail.html</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> error_message %&#125;</span><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span></span><span class="template-variable">&#123;&#123; error_message &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"</span></span></span><span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> 'polls:vote' question.id %&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">csrf_token</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> choice <span class="keyword">in</span> question.choice_set.all %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"choice"</span> <span class="attr">id</span>=<span class="string">"choice</span></span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">value</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; choice.id &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"choice</span></span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; choice.choice_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">endfor</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Vote"</span> /&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简要说明：<br>在detail网页模板中，我们为Question对应的每个Choice都添加了一个单选按钮用于选择。 每个单选按钮的value属性是对应的各个Choice的ID。 每个单选按钮的name是”choice”。 这意味着，当有人选择一个单选按钮并提交表单提交时，它将发送一个POST数据choice=#，其中# 为选择的Choice的ID。</p>
+</li>
+<li><p>设置表单的action路径，并设置 method=”post”。</p>
+</li>
+<li>url配置:<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span class="string">'vote'</span>),</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="构建一个表单"><a href="#构建一个表单" class="headerlink" title="构建一个表单"></a>构建一个表单</h4><ul>
+<li><p>模板：</p>
+  <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">form</span> action=<span class="string">"/your-name/"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"your_name"</span>&gt;Your name: &lt;/<span class="keyword">label</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">input</span> id=<span class="string">"your_name"</span> <span class="keyword">type</span>=<span class="string">"text"</span> name=<span class="string">"your_name"</span> value=<span class="string">"&#123;&#123; current_name &#125;&#125;"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"submit"</span> value=<span class="string">"OK"</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">form</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个表单</p>
+  <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">forms</span>.py</span><br><span class="line"></span><br><span class="line"><span class="title">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">NameForm</span>(<span class="title">forms</span>.<span class="type">Form</span>):</span></span><br><span class="line"><span class="class">    your_name = forms.<span class="type">CharField</span>(<span class="title">label</span>='<span class="type">Your</span> <span class="title">name'</span>, <span class="title">max_length</span>=100)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>它定义一个Form 类，只带有一个字段（your_name）。 我们已经对这个字段使用一个人性化的标签，当渲染时它将出现在<label> 中（在这个例子中，即使我们省略它，我们指定的label还是会自动生成）。</label></li>
+<li><p>Form 的实例具有一个is_valid() 方法，它为所有的字段运行验证的程序。  当调用这个方法时，如果所有的字段都包含合法的数据，它将：</p>
+<ul>
+<li>返回True</li>
+<li>将表单的数据放到cleaned_data 属性中。</li>
+</ul>
+</li>
+<li><p>完整的表单，第一次渲染时，看上去将像：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"your_name"</span>&gt;Your name: &lt;/<span class="keyword">label</span>&gt;</span><br><span class="line">&lt;<span class="keyword">input</span> id=<span class="string">"your_name"</span> <span class="keyword">type</span>=<span class="string">"text"</span> name=<span class="string">"your_name"</span> maxlength=<span class="string">"100"</span> required /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注意它不包含 &lt;<span class="keyword">form</span>&gt; 标签和提交按钮。 我们必须自己在模板中提供它们。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>视图</p>
+<ul>
+<li><p>我们要在视图中实例化它。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect</span><br><span class="line"><span class="keyword">from</span> .forms <span class="keyword">import</span> NameForm</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_name</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># 如果这是一个POST请求,我们就需要处理表单数据</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        <span class="comment"># 创建一个表单实例,并且使用表单数据填充request请求:</span></span><br><span class="line">        form = NameForm(request.POST)</span><br><span class="line">        <span class="comment"># 检查数据有效性:</span></span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            <span class="comment"># 在需要时，可以在form.cleaned_date中处理数据</span></span><br><span class="line">            <span class="comment"># ...</span></span><br><span class="line">            <span class="comment"># 重定向到一个新的URL:</span></span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(<span class="string">'/thanks/'</span>)</span><br><span class="line"><span class="comment"># 如果是GET或者其它请求方法，我们将创建一个空的表单。</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = NameForm()</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'name.html'</span>, &#123;<span class="string">'form'</span>: form&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果访问视图的是一个GET 请求，<font color="red">它将创建一个空的表单实例并将它放置到要渲染的模板的上下文中。 这是我们在第一次访问该URL 时预期发生的情况。</font></p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/30/Django-基础篇5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-Django-基础篇4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+
+	   
+	  <header class="article-header">
+	    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/30/Django-基础篇4/">Django-基础篇4</a>
+    </h1>
+  
+
+	    
+	    <a href="/2018/08/30/Django-基础篇4/" class="archive-article-date">
+  	<time datetime="2018-08-29T16:13:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
+</a>
+	    
+	  </header>
+	
+	<!-- 目录内容 -->
+	
+	<!-- 目录内容结束 -->
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/30/Django-基础篇4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-Django-基础篇3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+
+	   
+	  <header class="article-header">
+	    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/30/Django-基础篇3/">Django-基础篇3-视图与模板</a>
+    </h1>
+  
+
+	    
+	    <a href="/2018/08/30/Django-基础篇3/" class="archive-article-date">
+  	<time datetime="2018-08-29T16:10:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
+</a>
+	    
+	  </header>
+	
+	<!-- 目录内容 -->
+	
+	<!-- 目录内容结束 -->
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每个视图函数只负责处理两件事中的一件：返回一个包含所请求页面内容的 HttpResponse对象，或抛出一个诸如Http404异常。</p>
+<ul>
+<li><p>视图中使用模板：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    latest_question_list = Question.objects.order_by(<span class="string">'-pub_date'</span>)[:<span class="number">5</span>]</span><br><span class="line">    template = loader.get_template(<span class="string">'polls/index.html'</span>)</span><br><span class="line">    context = &#123;</span><br><span class="line">        <span class="string">'latest_question_list'</span>: latest_question_list,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(template.render(context, request))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>快捷方式：render()</p>
+<ul>
+<li>Django的快捷函数:<a href="https://yiyibooks.cn/xx/Django_1.11.6/topics/http/shortcuts.html#django.shortcuts.render" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/topics/http/shortcuts.html#django.shortcuts.render</a></li>
+<li>render()函数将请求对象作为它的第一个参数，模板的名字作为它的第二个参数，一个字典作为它可选的第三个参数。 <font color="">它返回一个HttpResponse对象，含有用给定的context 渲染后的模板。</font></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>抛出404异常</p>
+<ul>
+<li>现在，让我们处理Question 详细页面的视图 —— 显示Question内容的页面： 下面是该视图：</li>
+<li>如果没有找到所请求ID的Question，这个视图引发一个Http404异常。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> Http404</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(request, question_id)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        question = Question.objects.get(pk=question_id)</span><br><span class="line">    <span class="keyword">except</span> Question.DoesNotExist:</span><br><span class="line">        <span class="keyword">raise</span> Http404(<span class="string">"Question does not exist"</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'polls/detail.html'</span>, &#123;<span class="string">'question'</span>: question&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>一个快捷方式：get_object_or_404() </p>
+<ul>
+<li><p>一种常见的习惯是使用get()并在对象不存在时引发Http404。 Django为此提供一个快捷方式。 下面是重写后的detail()视图：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404, render</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(request, question_id)</span>:</span></span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'polls/detail.html'</span>, &#123;<span class="string">'question'</span>: question&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>get_object_or_404() 函数将一个Django模型作为它的第一个参数，任意数量的关键字参数作为它的第二个参数，它会将这些关键字参数传递给模型管理器中的get() 函数。 如果对象不存在，它就引发一个 Http404异常。</p>
+</li>
+<li>还有一个get_list_or_404()函数，它的工作方式类似get_object_or_404() —— 差别在于它使用filter()而不是get()。 如果列表为空则引发Http404。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>移除模板中的硬编码</p>
+<ul>
+<li><p>原来：</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/polls/</span></span></span><span class="template-variable">&#123;&#123; question.id &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">/"</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改后：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;&lt;a href=<span class="string">"&#123;% url 'detail' question.id %&#125;"</span>&gt;&#123;&#123; question.question_text &#125;&#125;&lt;<span class="regexp">/a&gt;&lt;/</span>li&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># the 'name' value as called by the &#123;% url %&#125; template tag</span></span><br><span class="line">url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span class="string">'detail'</span>),</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>好处：</p>
+<ul>
+<li>如果你想把polls应用中detail视图的URL改成其它样子比如polls/specifics/12/，就可以不必在该模板（或者多个模板）中修改它，只需要修改polls/urls.py：<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># added the word 'specifics'</span></span><br><span class="line">url(<span class="string">r'^specifics/(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span class="string">'detail'</span>),</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>命名空间URL名称</p>
+<ul>
+<li><p>在polls/urls.py文件中，继续添加app_name来设置应用程序命名空间：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">polls/urls.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line">app_name = <span class="string">'polls'</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^$'</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">    url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span class="string">'detail'</span>),</span><br><span class="line">    url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span class="string">'results'</span>),</span><br><span class="line">    url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span class="string">'vote'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在将你的模板polls/index.html由：</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">polls/templates/polls/index.html</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span></span><span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> 'detail' question.id %&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">修改为指向具有命名空间的详细视图：</span></span><br><span class="line"><span class="xml">polls/templates/polls/index.html</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span></span><span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> 'polls:detail' question.id %&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>一个vote()函数的模拟实现</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404, render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect, HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Choice, Question</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">vote</span><span class="params">(request, question_id)</span>:</span></span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        selected_choice = question.choice_set.get(pk=request.POST[<span class="string">'choice'</span>])</span><br><span class="line">    <span class="keyword">except</span> (KeyError, Choice.DoesNotExist):</span><br><span class="line">        <span class="comment"># 重新显示该问题的表单</span></span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">'polls/detail.html'</span>, &#123;</span><br><span class="line">            <span class="string">'question'</span>: question,</span><br><span class="line">            <span class="string">'error_message'</span>: <span class="string">"You didn't select a choice."</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        selected_choice.votes += <span class="number">1</span></span><br><span class="line">        selected_choice.save()</span><br><span class="line">        <span class="comment"># 始终在成功处理 POST 数据后返回一个 HttpResponseRedirect ，</span></span><br><span class="line">        <span class="comment"># （合并上句） 这样可以防止用户点击“后退”按钮时数据被发送两次。</span></span><br><span class="line">        <span class="comment"># （合并至上一句）</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'polls:results'</span>, args=(question.id,)))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>request.POST 是一个类似字典的对象，让你可以通过关键字的名字获取提交的数据。</li>
+<li>如果在POST数据中没有提供request.POST[‘choice’]，choice将引发一个KeyError。 上面的代码检查KeyError，如果没有给出choice将重新显示Question表单和一个错误信息。</li>
+<li>异常参考：<a href="https://docs.python.org/3/library/exceptions.html" target="_blank" rel="noopener">https://docs.python.org/3/library/exceptions.html</a></li>
+<li>在增加Choice的得票数之后，<font color="red">代码返回一个 HttpResponseRedirect而不是常用的HttpResponse。 HttpResponseRedirect只接收一个参数：用户将要被重定向的URL</font></li>
+<li>在这个例子中，我们在HttpResponseRedirect的构造函数中使用reverse()函数。 这个函数避免了我们在视图函数中硬编码URL。 它需要我们给出我们想要跳转的视图的名字和该视图所对应的URL模式中需要给该视图提供的参数。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>关于reverse()：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/urlresolvers.html#django.urls.reverse" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/urlresolvers.html#django.urls.reverse</a></p>
+<ul>
+<li>reverse(viewname, urlconf=None, args=None, kwargs=None, current_app=None)[source]</li>
+<li><p>例如，给定以下url：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> news <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">url(<span class="string">r'^archive/$'</span>, views.archive, name=<span class="string">'news-archive'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以使用以下任一操作来反转URL：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># using the named URL</span></span><br><span class="line"><span class="built_in">reverse</span>('news-archive')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># passing a callable object</span></span><br><span class="line"><span class="comment"># (This is discouraged because you can't reverse namespaced views this way.),提倡用上面的方式</span></span><br><span class="line"><span class="keyword">from</span> news import views</span><br><span class="line"><span class="built_in">reverse</span>(views.archive)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果网址接受参数，您可以在args中传递参数。 像这样：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> <span class="keyword">reverse</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> myview(request):</span><br><span class="line">    <span class="keyword">return</span> HttpResponseRedirect(<span class="keyword">reverse</span>(<span class="string">'arch-summary'</span>, args=[<span class="number">1945</span>]))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>您也可以传递kwargs而不是args。 像这样：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; reverse(<span class="string">'admin:app_list'</span>, kwargs=&#123;<span class="string">'app_label'</span>: <span class="string">'auth'</span>&#125;)</span><br><span class="line"><span class="string">'/admin/auth/'</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/30/Django-基础篇3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-Django-基础篇2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+
+	   
+	  <header class="article-header">
+	    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/28/Django-基础篇2/">Django-基础篇2</a>
+    </h1>
+  
+
+	    
+	    <a href="/2018/08/28/Django-基础篇2/" class="archive-article-date">
   	<time datetime="2018-08-28T13:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-28</time>
 </a>
 	    
@@ -177,19 +549,12 @@
 </li>
 <li><p>创建应用：</p>
 <ul>
-<li>python manage.py startapp test</li>
+<li>python manage.py startapp test  </li>
 </ul>
 </li>
-<li><p>生成迁移文件：</p>
-<ul>
-<li>python manage.py makemigrations</li>
 </ul>
-</li>
-<li><p>执行迁移：</p>
-<ul>
-<li>python manage.py migrate （app名）
         
-          <a class="article-more-a" href="/2018/08/28/Djang-基础篇2/#more">more >></a>
+          <a class="article-more-a" href="/2018/08/28/Django-基础篇2/#more">more >></a>
         
       
 
@@ -213,7 +578,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/28/Djang-基础篇2/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/28/Django-基础篇2/">展开全文 >></a>
         </p>
       
 
@@ -597,11 +962,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

@@ -1,5 +1,5 @@
 ---
-title: Djang-基础篇2
+title: Django-基础篇2
 date: 2018-08-28 21:57:28
 tags: Django
 ---
@@ -11,14 +11,15 @@ tags: Django
     + django-admin startproject 项目名称
     
 - 创建应用：
-    + python manage.py startapp test
-    
+    + python manage.py startapp test  
+
+<!--more-->
 - 生成迁移文件：
     + python manage.py makemigrations
 
 - 执行迁移：
-    + python manage.py migrate （app名）
-<!--more-->
+    + python manage.py migrate （app名）  
+
 
 - 创建管理员:
     + python manage.py createsuperuser
@@ -49,14 +50,14 @@ tags: Django
  
 {% qnimg field_types.png %}  {% qnimg field_options.png %}  {% qnimg other_fields.png %}
 
-- 模型的 Meta 选项
-- 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/models/options.html  
-
-{% qnimg meta.png %}  
+- 模型的 Meta 选项  
+    + 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/models/options.html  
+    
+    {% qnimg meta.png %}  
 
 #### model的使用
 - 文档：https://yiyibooks.cn/xx/Django_1.11.6/topics/db/queries.html
-- 下面栗子中用到的模型：
+- 后面栗子中用到的模型：
     ```
     from django.db import models
 
@@ -515,14 +516,13 @@ tags: Django
       Entry.objects.all().delete()
     ```
 
-- 一次更新多个对象
+- 一次更新多个对象  
     + 有时你想为一个QuerySet中所有对象的某个字段都设置一个特定的值。 这时你可以使用update() 方法。 像这样：
     ```
     # Update all the headlines with pub_date in 2007
     Entry.objects.filter(pub_date__year=2007).update(headline='Everything is the same')
     ```
-    
-   + 你只可以对非关联字段和ForeignKey 字段使用这个方法。 若要更新一个非关联字段，只需提供一个新的常数值。 <font color="red">若要更新ForeignKey 字段，需设置新的值为你想指向的新的模型实例</font>。 像这样：
+    + 你只可以对非关联字段和ForeignKey 字段使用这个方法。 若要更新一个非关联字段，只需提供一个新的常数值。 <font color="red">若要更新ForeignKey 字段，需设置新的值为你想指向的新的模型实例</font>。 像这样：
 
     ```
     >>> b = Blog.objects.get(pk=1)
@@ -554,7 +554,8 @@ tags: Django
     ```
 
 
-- <font color="red">一对多关系</font>
+- <font color="red">一对多关系</font>  
+
     + <font color="red">正向查询：</font>
     + 如果一个模型具有ForeignKey，那么该模型的实例将可以通过属性访问关联的（外部）对象。 例如：
     ```
