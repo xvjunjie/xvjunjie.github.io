@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xvjunjie.github.io">
-  <title>Archives | xvjunjie的博客</title>
+  <title>Django-基础篇3-视图 | xvjunjie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网站描述">
-<meta name="keywords" content="关键词">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xvjunjie的博客">
-<meta property="og:url" content="https://xvjunjie.github.io/archives/index.html">
+  <meta name="description" content="每个视图函数只负责处理两件事中的一件：返回一个包含所请求页面内容的 HttpResponse对象，或抛出一个诸如Http404异常。  视图中使用模板：   123456789101112polls/views.pyfrom django.http import HttpResponsefrom django.template import loaderfrom .models import Qu">
+<meta name="keywords" content="Django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django-基础篇3-视图">
+<meta property="og:url" content="https://xvjunjie.github.io/2018/08/30/Django-基础篇3-视图/index.html">
 <meta property="og:site_name" content="xvjunjie的博客">
-<meta property="og:description" content="网站描述">
+<meta property="og:description" content="每个视图函数只负责处理两件事中的一件：返回一个包含所请求页面内容的 HttpResponse对象，或抛出一个诸如Http404异常。  视图中使用模板：   123456789101112polls/views.pyfrom django.http import HttpResponsefrom django.template import loaderfrom .models import Qu">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-17T15:00:45.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xvjunjie的博客">
-<meta name="twitter:description" content="网站描述">
+<meta name="twitter:title" content="Django-基础篇3-视图">
+<meta name="twitter:description" content="每个视图函数只负责处理两件事中的一件：返回一个包含所请求页面内容的 HttpResponse对象，或抛出一个诸如Http404异常。  视图中使用模板：   123456789101112polls/views.pyfrom django.http import HttpResponsefrom django.template import loaderfrom .models import Qu">
   
     <link rel="alternative" href="/atom.xml" title="xvjunjie的博客" type="application/atom+xml">
   
@@ -138,112 +139,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Django-基础篇3-视图" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+
+	   
+	  <header class="article-header">
+	    
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/30/Django-基础篇5-表单/" class="archive-article-date">
-  	<time datetime="2018-08-29T16:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/30/Django-基础篇5-表单/">Django-基础篇5-表单</a>
+    <h1 class="article-title" itemprop="name">
+      Django-基础篇3-视图
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/30/Django-基础篇4-模板/" class="archive-article-date">
-  	<time datetime="2018-08-29T16:13:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/30/Django-基础篇4-模板/">Django-基础篇4-模板</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/30/Django-基础篇3-视图/" class="archive-article-date">
+	    
+	    <a href="/2018/08/30/Django-基础篇3-视图/" class="archive-article-date">
   	<time datetime="2018-08-29T16:10:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/30/Django-基础篇3-视图/">Django-基础篇3-视图</a>
-    </h1>
-  
+	    
+	  </header>
+	
+	<!-- 目录内容 -->
+	
+	<!-- 目录内容结束 -->
 
-        <div class="article-info info-on-right">
-          
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每个视图函数只负责处理两件事中的一件：返回一个包含所请求页面内容的 HttpResponse对象，或抛出一个诸如Http404异常。</p>
+<ul>
+<li><p>视图中使用模板：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    latest_question_list = Question.objects.order_by(<span class="string">'-pub_date'</span>)[:<span class="number">5</span>]</span><br><span class="line">    template = loader.get_template(<span class="string">'polls/index.html'</span>)</span><br><span class="line">    context = &#123;</span><br><span class="line">        <span class="string">'latest_question_list'</span>: latest_question_list,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(template.render(context, request))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>快捷方式：render()</p>
+<ul>
+<li>Django的快捷函数:<a href="https://yiyibooks.cn/xx/Django_1.11.6/topics/http/shortcuts.html#django.shortcuts.render" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/topics/http/shortcuts.html#django.shortcuts.render</a></li>
+<li>render()函数将请求对象作为它的第一个参数，模板的名字作为它的第二个参数，一个字典作为它可选的第三个参数。 <font color="">它返回一个HttpResponse对象，含有用给定的context 渲染后的模板。</font></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>抛出404异常</p>
+<ul>
+<li>现在，让我们处理Question 详细页面的视图 —— 显示Question内容的页面： 下面是该视图：</li>
+<li>如果没有找到所请求ID的Question，这个视图引发一个Http404异常。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> Http404</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(request, question_id)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        question = Question.objects.get(pk=question_id)</span><br><span class="line">    <span class="keyword">except</span> Question.DoesNotExist:</span><br><span class="line">        <span class="keyword">raise</span> Http404(<span class="string">"Question does not exist"</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'polls/detail.html'</span>, &#123;<span class="string">'question'</span>: question&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>一个快捷方式：get_object_or_404() </p>
+<ul>
+<li><p>一种常见的习惯是使用get()并在对象不存在时引发Http404。 Django为此提供一个快捷方式。 下面是重写后的detail()视图：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404, render</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(request, question_id)</span>:</span></span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'polls/detail.html'</span>, &#123;<span class="string">'question'</span>: question&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>get_object_or_404() 函数将一个Django模型作为它的第一个参数，任意数量的关键字参数作为它的第二个参数，它会将这些关键字参数传递给模型管理器中的get() 函数。 如果对象不存在，它就引发一个 Http404异常。</p>
+</li>
+<li>还有一个get_list_or_404()函数，它的工作方式类似get_object_or_404() —— 差别在于它使用filter()而不是get()。 如果列表为空则引发Http404。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>移除模板中的硬编码</p>
+<ul>
+<li><p>原来：</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/polls/</span></span></span><span class="template-variable">&#123;&#123; question.id &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">/"</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改后：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;&lt;a href=<span class="string">"&#123;% url 'detail' question.id %&#125;"</span>&gt;&#123;&#123; question.question_text &#125;&#125;&lt;<span class="regexp">/a&gt;&lt;/</span>li&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># the 'name' value as called by the &#123;% url %&#125; template tag</span></span><br><span class="line">url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span class="string">'detail'</span>),</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>好处：</p>
+<ul>
+<li>如果你想把polls应用中detail视图的URL改成其它样子比如polls/specifics/12/，就可以不必在该模板（或者多个模板）中修改它，只需要修改polls/urls.py：<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># added the word 'specifics'</span></span><br><span class="line">url(<span class="string">r'^specifics/(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span class="string">'detail'</span>),</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>命名空间URL名称</p>
+<ul>
+<li><p>在polls/urls.py文件中，继续添加app_name来设置应用程序命名空间：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">polls/urls.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line">app_name = <span class="string">'polls'</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^$'</span>, views.index, name=<span class="string">'index'</span>),</span><br><span class="line">    url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/$'</span>, views.detail, name=<span class="string">'detail'</span>),</span><br><span class="line">    url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/results/$'</span>, views.results, name=<span class="string">'results'</span>),</span><br><span class="line">    url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span class="string">'vote'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在将你的模板polls/index.html由：</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">polls/templates/polls/index.html</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span></span><span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> 'detail' question.id %&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">修改为指向具有命名空间的详细视图：</span></span><br><span class="line"><span class="xml">polls/templates/polls/index.html</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span></span><span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> 'polls:detail' question.id %&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>一个vote()函数的模拟实现</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">polls/views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404, render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect, HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Choice, Question</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">vote</span><span class="params">(request, question_id)</span>:</span></span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        selected_choice = question.choice_set.get(pk=request.POST[<span class="string">'choice'</span>])</span><br><span class="line">    <span class="keyword">except</span> (KeyError, Choice.DoesNotExist):</span><br><span class="line">        <span class="comment"># 重新显示该问题的表单</span></span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">'polls/detail.html'</span>, &#123;</span><br><span class="line">            <span class="string">'question'</span>: question,</span><br><span class="line">            <span class="string">'error_message'</span>: <span class="string">"You didn't select a choice."</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        selected_choice.votes += <span class="number">1</span></span><br><span class="line">        selected_choice.save()</span><br><span class="line">        <span class="comment"># 始终在成功处理 POST 数据后返回一个 HttpResponseRedirect ，</span></span><br><span class="line">        <span class="comment"># （合并上句） 这样可以防止用户点击“后退”按钮时数据被发送两次。</span></span><br><span class="line">        <span class="comment"># （合并至上一句）</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'polls:results'</span>, args=(question.id,)))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>request.POST 是一个类似字典的对象，让你可以通过关键字的名字获取提交的数据。</li>
+<li>如果在POST数据中没有提供request.POST[‘choice’]，choice将引发一个KeyError。 上面的代码检查KeyError，如果没有给出choice将重新显示Question表单和一个错误信息。</li>
+<li>异常参考：<a href="https://docs.python.org/3/library/exceptions.html" target="_blank" rel="noopener">https://docs.python.org/3/library/exceptions.html</a></li>
+<li>在增加Choice的得票数之后，<font color="red">代码返回一个 HttpResponseRedirect而不是常用的HttpResponse。 HttpResponseRedirect只接收一个参数：用户将要被重定向的URL</font></li>
+<li>在这个例子中，我们在HttpResponseRedirect的构造函数中使用reverse()函数。 这个函数避免了我们在视图函数中硬编码URL。 它需要我们给出我们想要跳转的视图的名字和该视图所对应的URL模式中需要给该视图提供的参数。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>关于reverse()：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/urlresolvers.html#django.urls.reverse" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/urlresolvers.html#django.urls.reverse</a></p>
+<ul>
+<li>reverse(viewname, urlconf=None, args=None, kwargs=None, current_app=None)[source]</li>
+<li><p>例如，给定以下url：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> news <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">url(<span class="string">r'^archive/$'</span>, views.archive, name=<span class="string">'news-archive'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以使用以下任一操作来反转URL：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># using the named URL</span></span><br><span class="line"><span class="built_in">reverse</span>('news-archive')</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># passing a callable object</span></span><br><span class="line"><span class="comment"># (This is discouraged because you can't reverse namespaced views this way.),提倡用上面的方式</span></span><br><span class="line"><span class="keyword">from</span> news import views</span><br><span class="line"><span class="built_in">reverse</span>(views.archive)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果网址接受参数，您可以在args中传递参数。 像这样：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> <span class="keyword">reverse</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> myview(request):</span><br><span class="line">    <span class="keyword">return</span> HttpResponseRedirect(<span class="keyword">reverse</span>(<span class="string">'arch-summary'</span>, args=[<span class="number">1945</span>]))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>您也可以传递kwargs而不是args。 像这样：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; reverse(<span class="string">'admin:app_list'</span>, kwargs=&#123;<span class="string">'app_label'</span>: <span class="string">'auth'</span>&#125;)</span><br><span class="line"><span class="string">'/admin/auth/'</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -255,172 +274,77 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/28/Django-基础篇2-模型/" class="archive-article-date">
-  	<time datetime="2018-08-28T13:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-28</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/08/30/Django-基础篇4-模板/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Django-基础篇4-模板
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/28/Django-基础篇2-模型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Django-基础篇2-模型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/28/Django-基础篇2-模型/">Django-基础篇2-模型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/Django-基础篇1-虚拟环境/" class="archive-article-date">
-  	<time datetime="2018-08-22T15:06:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/Django-基础篇1-虚拟环境/">Django-基础篇1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/18/Linux命令2-系统管理/" class="archive-article-date">
-  	<time datetime="2018-08-18T07:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/18/Linux命令2-系统管理/">Linux命令2-常用系统管理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/22/Linux命令1-常用基本命令/" class="archive-article-date">
-  	<time datetime="2018-07-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/22/Linux命令1-常用基本命令/">Linux命令1-常用基本命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
-
 
           </div>
         </div>
@@ -452,8 +376,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

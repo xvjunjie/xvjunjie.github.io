@@ -6,30 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xvjunjie.github.io">
-  <title>Django-基础篇2 | xvjunjie的博客</title>
+  <title>Django-基础篇5-表单 | xvjunjie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用命令： 创建项目：  django-admin startproject 项目名称   创建应用：  python manage.py startapp test">
+  <meta name="description" content="表单字段 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/fields.html  表单API 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/api.html  概述：一个简单的表单 投票详细页面的模板（“polls/detail.html”） 12345678910111213polls">
 <meta name="keywords" content="Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django-基础篇2">
-<meta property="og:url" content="https://xvjunjie.github.io/2018/08/28/Django-基础篇2/index.html">
+<meta property="og:title" content="Django-基础篇5-表单">
+<meta property="og:url" content="https://xvjunjie.github.io/2018/08/30/Django-基础篇5-表单/index.html">
 <meta property="og:site_name" content="xvjunjie的博客">
-<meta property="og:description" content="常用命令： 创建项目：  django-admin startproject 项目名称   创建应用：  python manage.py startapp test">
+<meta property="og:description" content="表单字段 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/fields.html  表单API 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/api.html  概述：一个简单的表单 投票详细页面的模板（“polls/detail.html”） 12345678910111213polls">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/field_types.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/field_options.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/other_fields.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/meta.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet1.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet2.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet3.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet4.png">
-<meta property="og:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/F.png">
-<meta property="og:updated_time" content="2018-08-29T16:01:26.566Z">
+<meta property="og:updated_time" content="2018-09-09T15:28:30.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Django-基础篇2">
-<meta name="twitter:description" content="常用命令： 创建项目：  django-admin startproject 项目名称   创建应用：  python manage.py startapp test">
-<meta name="twitter:image" content="http://pdp5bkqjj.bkt.clouddn.com/images/field_types.png">
+<meta name="twitter:title" content="Django-基础篇5-表单">
+<meta name="twitter:description" content="表单字段 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/fields.html  表单API 文档：https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/api.html  概述：一个简单的表单 投票详细页面的模板（“polls/detail.html”） 12345678910111213polls">
   
     <link rel="alternative" href="/atom.xml" title="xvjunjie的博客" type="application/atom+xml">
   
@@ -149,7 +139,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Django-基础篇2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Django-基础篇5-表单" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -159,13 +149,13 @@
 	    
   
     <h1 class="article-title" itemprop="name">
-      Django-基础篇2
+      Django-基础篇5-表单
     </h1>
   
 
 	    
-	    <a href="/2018/08/28/Django-基础篇2/" class="archive-article-date">
-  	<time datetime="2018-08-28T13:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-28</time>
+	    <a href="/2018/08/30/Django-基础篇5-表单/" class="archive-article-date">
+  	<time datetime="2018-08-29T16:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
 </a>
 	    
 	  </header>
@@ -178,435 +168,108 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h3><ul>
-<li><p>创建项目：</p>
+        <h4 id="表单字段"><a href="#表单字段" class="headerlink" title="表单字段"></a>表单字段</h4><ul>
+<li>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/fields.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/fields.html</a></li>
+</ul>
+<h4 id="表单API"><a href="#表单API" class="headerlink" title="表单API"></a>表单API</h4><ul>
+<li>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/api.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/api.html</a></li>
+</ul>
+<h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><h4 id="一个简单的表单"><a href="#一个简单的表单" class="headerlink" title="一个简单的表单"></a>一个简单的表单</h4><ul>
+<li><p>投票详细页面的模板（“polls/detail.html”）</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">polls/templates/polls/detail.html</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><span class="template-variable">&#123;&#123; question.question_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> error_message %&#125;</span><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span></span><span class="template-variable">&#123;&#123; error_message &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"</span></span></span><span class="template-tag">&#123;% <span class="name"><span class="name">url</span></span> 'polls:vote' question.id %&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">csrf_token</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> choice <span class="keyword">in</span> question.choice_set.all %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"choice"</span> <span class="attr">id</span>=<span class="string">"choice</span></span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">value</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; choice.id &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"choice</span></span></span><span class="template-variable">&#123;&#123; forloop.counter &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; choice.choice_text &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">endfor</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Vote"</span> /&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简要说明：<br>在detail网页模板中，我们为Question对应的每个Choice都添加了一个单选按钮用于选择。 每个单选按钮的value属性是对应的各个Choice的ID。 每个单选按钮的name是”choice”。 这意味着，当有人选择一个单选按钮并提交表单提交时，它将发送一个POST数据choice=#，其中# 为选择的Choice的ID。</p>
+</li>
+<li><p>设置表单的action路径，并设置 method=”post”。</p>
+</li>
+<li>url配置:<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url(<span class="string">r'^(?P&lt;question_id&gt;[0-9]+)/vote/$'</span>, views.vote, name=<span class="string">'vote'</span>),</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="在Django中创建一个表单"><a href="#在Django中创建一个表单" class="headerlink" title="在Django中创建一个表单"></a>在Django中创建一个表单</h4><ul>
+<li><p>创建一个表单</p>
+  <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">forms</span>.py</span><br><span class="line"></span><br><span class="line"><span class="title">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">NameForm</span>(<span class="title">forms</span>.<span class="type">Form</span>):</span></span><br><span class="line"><span class="class">    your_name = forms.<span class="type">CharField</span>(<span class="title">label</span>='<span class="type">Your</span> <span class="title">name'</span>, <span class="title">max_length</span>=100)</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>django-admin startproject 项目名称</li>
-</ul>
-</li>
-<li><p>创建应用：</p>
+<li>它定义一个Form 类，只带有一个字段（your_name）。 我们已经对这个字段使用一个人性化的标签，当渲染时它将出现在<label> 中（在这个例子中，即使我们省略它，我们指定的label还是会自动生成）。</label></li>
+<li><p>Form 的实例具有一个is_valid() 方法，它为所有的字段运行验证的程序。  当调用这个方法时，如果所有的字段都包含合法的数据，它将：</p>
 <ul>
-<li>python manage.py startapp test  </li>
+<li>返回True</li>
+<li>将表单的数据放到cleaned_data 属性中。</li>
 </ul>
 </li>
+<li><p>完整的表单，第一次渲染时，看上去将像：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"your_name"</span>&gt;Your name: &lt;/<span class="keyword">label</span>&gt;</span><br><span class="line">&lt;<span class="keyword">input</span> id=<span class="string">"your_name"</span> <span class="keyword">type</span>=<span class="string">"text"</span> name=<span class="string">"your_name"</span> maxlength=<span class="string">"100"</span> required /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注意它不包含 &lt;<span class="keyword">form</span>&gt; 标签和提交按钮。 我们必须自己在模板中提供它们。</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<a id="more"></a>
+</li>
+<li><p>视图</p>
 <ul>
-<li><p>生成迁移文件：</p>
+<li><p>我们要在视图中实例化它。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">views.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect</span><br><span class="line"><span class="keyword">from</span> .forms <span class="keyword">import</span> NameForm</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_name</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># 如果这是一个POST请求,我们就需要处理表单数据</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        <span class="comment"># 创建一个表单实例,并且使用表单数据填充request请求:</span></span><br><span class="line">        form = NameForm(request.POST)</span><br><span class="line">        <span class="comment"># 检查数据有效性:</span></span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            <span class="comment"># 在需要时，可以在form.cleaned_date中处理数据</span></span><br><span class="line">            <span class="comment"># ...</span></span><br><span class="line">            <span class="comment"># 重定向到一个新的URL:</span></span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(<span class="string">'/thanks/'</span>)</span><br><span class="line"><span class="comment"># 如果是GET或者其它请求方法，我们将创建一个空的表单。</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = NameForm()</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'name.html'</span>, &#123;<span class="string">'form'</span>: form&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果访问视图的是一个GET 请求，<font color="red">它将创建一个空的表单实例并将它放置到要渲染的模板的上下文中。 这是我们在第一次访问该URL 时预期发生的情况。</font></p>
+</li>
+<li>如果使用POST请求提交表单，该视图将再次创建一个表单实例，并使用请求中的数据填充表单：形式 = NameForm（request.POST）这被称为“将数据绑定到表单”（现在是绑定的形式）。</li>
+<li>我们调用窗体的is_valid()方法；如果不是True，我们返回到表单的模板。 这时表单不再为空（未绑定），所以HTML 表单将用之前提交的数据填充，然后可以根据要求编辑并改正它。</li>
+<li><font color="red">如果True 为is_valid()，我们将能够在cleaned_data (使用cleaned_data[‘’]) 属性中找到所有合法的表单数据。</font> 在发送HTTP 重定向给浏览器告诉它下一步的去向之前，我们可以用这个数据来更新数据库或者做其它处理。</li>
+</ul>
+</li>
+<li><p>模板</p>
+  <figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/your-name/"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-tag">&#123;% <span class="name"><span class="name">csrf_token</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span> /&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>python manage.py makemigrations</li>
+<li>Django会根据模型类的字段和属性，在HTML中自动生成对应表单标签和标签属性。生成的标签会被放置到所在的位置。(后面讲自定义)</li>
+<li>HTML5 输入类型和浏览器验证<br>如果你的表单包含URLField、EmailField 或其它整数字段类型，Django 将使用number、url和 email 这样的HTML5 输入类型。 默认情况下，浏览器可能会对这些字段进行它们自身的验证，这些验证可能比Django 的验证更严格。 如果你想禁用这个行为，请设置form 标签的novalidate 属性，或者指定一个不同的字段，如TextInput。</li>
 </ul>
 </li>
-<li><p>执行迁移：</p>
+</ul>
+<h4 id="关于Django的Form类的更多内容"><a href="#关于Django的Form类的更多内容" class="headerlink" title="关于Django的Form类的更多内容"></a>关于Django的Form类的更多内容</h4><ul>
+<li>所有的表单类都作为django.forms.Form 的子类创建，包括你在Django 管理站点中遇到的ModelForm。<br>关于ModelForm：<a href="https://yiyibooks.cn/xx/Django_1.11.6/topics/forms/modelforms.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/topics/forms/modelforms.html</a></li>
+<li><p>实际上，如果你的表单打算直接用来添加和编辑Django 的模型，ModelForm 可以节省你的许多时间、精力和代码，<font color="red">因为它将根据Model 类构建一个表单以及适当的字段和属性。</font></p>
+</li>
+<li><p>绑定和未绑定的表单实例</p>
 <ul>
-<li>python manage.py migrate （app名）  </li>
+<li>不包含数据的表单称为未绑定表单。 当render给用户时，它将为空或包含默认的值。</li>
+<li>包含数据的表单称为绑定表单，因此可以用来检验数据是否合法。 如果渲染一个不合法的绑定的表单，它将包含内联的错误信息，告诉用户如何纠正数据。<br>表单的is_bound 属性将告诉你一个表单是否具有绑定的数据。</li>
 </ul>
 </li>
-</ul>
+<li><p>窗口小部件</p>
 <ul>
-<li><p>创建管理员:</p>
+<li><p>关于Widget：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/widgets.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/forms/widgets.html</a></p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">forms</span>.py</span><br><span class="line"></span><br><span class="line"><span class="title">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">ContactForm</span>(<span class="title">forms</span>.<span class="type">Form</span>):</span></span><br><span class="line"><span class="class">    subject = forms.<span class="type">CharField</span>(<span class="title">max_length</span>=100)</span></span><br><span class="line"><span class="class">    message = forms.<span class="type">CharField</span>(<span class="title">widget</span>=<span class="title">forms</span>.<span class="type">Textarea</span>)</span></span><br><span class="line"><span class="class">    sender = forms.<span class="type">EmailField</span>()</span></span><br><span class="line"><span class="class">    cc_myself = forms.<span class="type">BooleanField</span>(<span class="title">required</span>=<span class="type">False</span>)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>每个表单字段都有一个对应的Widget class，它对应一个HTML 表单Widget，例如&lt;input type=”text”&gt;。<br>在大部分情况下，字段都具有一个合理的默认Widget。 例如，默认情况下，CharField 具有一个TextInput Widget，它在HTML 中生成一个&lt;input type=”text”&gt;。 如果你需要message，在定义表单字段时你应该指定一个合适的Widget，例如我们定义的&lt;textarea &gt; 字段。</p>
+</li>
+<li>不管表单提交的是什么数据，一旦通过调用is_valid() 成功验证（is_valid() 返回True），<font color="red">验证后的表单数据将位于form.cleaned_data 字典中。</font> 这些数据已经为你转换好为Python 的类型。</li>
+<li><font color="red">此时，你依然可以从request.POST 中直接访问到未验证的数据，但是访问验证后的数据更好一些。</font></li>
+<li>有些字段类型需要一些额外的处理。 例如，使用表单上传的文件需要不同地处理 <font color="red">（它们可以从request.POST 获取，而不是request.FILES）。</font> </li>
+</ul>
+</li>
+</ul>
+<h4 id="使用表单模板"><a href="#使用表单模板" class="headerlink" title="使用表单模板"></a>使用表单模板</h4><ul>
+<li><p>手动渲染字段</p>
 <ul>
-<li>python manage.py createsuperuser</li>
+<li><p>下面是我们的ContactForm 实例的输出：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; <span class="selector-tag">form</span><span class="selector-class">.as_p</span> &#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"id_subject"</span>&gt;Subject:&lt;/label&gt;</span><br><span class="line">    &lt;<span class="selector-tag">input</span> id=<span class="string">"id_subject"</span> type=<span class="string">"text"</span> name=<span class="string">"subject"</span> maxlength=<span class="string">"100"</span> required /&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"id_message"</span>&gt;Message:&lt;/label&gt;</span><br><span class="line">    &lt;<span class="selector-tag">textarea</span> name=<span class="string">"message"</span> id=<span class="string">"id_message"</span> required&gt;&lt;/textarea&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"id_sender"</span>&gt;Sender:&lt;/label&gt;</span><br><span class="line">    &lt;<span class="selector-tag">input</span> type=<span class="string">"email"</span> name=<span class="string">"sender"</span> id=<span class="string">"id_sender"</span> required /&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"id_cc_myself"</span>&gt;Cc myself:&lt;/label&gt;</span><br><span class="line">    &lt;<span class="selector-tag">input</span> type=<span class="string">"checkbox"</span> name=<span class="string">"cc_myself"</span> id=<span class="string">"id_cc_myself"</span> /&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在上面的例子中，Django会自动生成表单，<font color="red">我们也可以自己来具体编写表单的HTML；</font>（例如，允许我们重新排序字段）。 每个字段都是表单的一个属性，可以使用 form.name_of_field 访问，并将在Django 模板中正确地渲染。 像这样：</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-variable">&#123;&#123; form.non_field_errors &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fieldWrapper"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.subject.errors &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; form.subject.id_for_label &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>Email subject:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.subject &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fieldWrapper"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.message.errors &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; form.message.id_for_label &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>Your message:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.message &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fieldWrapper"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.sender.errors &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; form.sender.id_for_label &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>Your email address:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.sender &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fieldWrapper"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.cc_myself.errors &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; form.cc_myself.id_for_label &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>CC yourself?<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; form.cc_myself &#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li><p>启动服务器:</p>
+<li><p>渲染表单错误消息</p>
 <ul>
-<li>python manage.py runserver</li>
-</ul>
+<li>在下面的例子中，我们将自己处理每个字段的错误和表单整体的各种错误。<font color="red"> 注意，表单和模板顶部的{ form.non_field_errors }} 查找每个字段的错误。</font></li>
+<li><p>使用{ form.name_of_field.errors }} 显示表单错误的一个清单，并渲染成一个ul。 看上去可能像：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"errorlist"</span>&gt;</span><br><span class="line">    &lt;li&gt;Sender is required.&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">&lt;/u</span>l&gt;</span><br></pre></td></tr></table></figure>
+<p>如果你希望进一步自定义错误信息的显示，你可以迭代它们来实现：</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> form.subject.errors %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> error <span class="keyword">in</span> form.subject.errors %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span></span><span class="template-variable">&#123;&#123; error|<span class="name">escape</span> &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="template-tag">&#123;% <span class="name"><span class="name">endfor</span></span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li><p>查看虚拟环境中安装了哪些包 </p>
-<ul>
-<li>pip list</li>
-</ul>
-</li>
-<li><p>虚拟环境中的包收集到requirements.txt中</p>
-<ul>
-<li>pip freeze &gt;requirement.txt </li>
-</ul>
-</li>
-<li><p>安装requirements.txt中的包</p>
-<ul>
-<li>pip install -r requirements.txt</li>
-</ul>
-</li>
-</ul>
-<h3 id="模型（Model）"><a href="#模型（Model）" class="headerlink" title="模型（Model）"></a>模型（Model）</h3><h4 id="字段类型和字段操作"><a href="#字段类型和字段操作" class="headerlink" title="字段类型和字段操作"></a>字段类型和字段操作</h4><ul>
-<li>可通过右侧目录查看具体字段类型和字段操作用法</li>
-<li>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/models/fields.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/models/fields.html</a> </li>
-</ul>
-<img src="http://pdp5bkqjj.bkt.clouddn.com/images/field_types.png">  <img src="http://pdp5bkqjj.bkt.clouddn.com/images/field_options.png">  <img src="http://pdp5bkqjj.bkt.clouddn.com/images/other_fields.png">
-<ul>
-<li><p>模型的 Meta 选项  </p>
-<ul>
-<li><p>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/models/options.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/models/options.html</a>  </p>
-<img src="http://pdp5bkqjj.bkt.clouddn.com/images/meta.png">  
+<li><p>非字段错误（以及使用nonfield 时渲染的隐藏字段错误）将渲染成一个额外的CSS 类型form.as_p() 以助于和字段错误信息区分。 例如， 看上去会像：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"errorlist nonfield"</span>&gt;</span><br><span class="line">    &lt;li&gt;Generic validation error&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">&lt;/u</span>l&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="model的使用"><a href="#model的使用" class="headerlink" title="model的使用"></a>model的使用</h4><ul>
-<li>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/topics/db/queries.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/topics/db/queries.html</a></li>
-<li><p>后面栗子中用到的模型：</p>
-  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">from django.db import models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blog</span>(<span class="title">models</span>.<span class="title">Model</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    tagline = models.TextField()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(<span class="keyword">self</span>)</span></span>:              <span class="comment"># __unicode__ on Python 2</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Author</span>(<span class="title">models</span>.<span class="title">Model</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    email = models.EmailField()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(<span class="keyword">self</span>)</span></span>:              <span class="comment"># __unicode__ on Python 2</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Entry</span>(<span class="title">models</span>.<span class="title">Model</span>):</span></span><br><span class="line">    blog = models.ForeignKey(Blog)<span class="comment">#Blog 和 Entry 是一对多的关系</span></span><br><span class="line">    headline = models.CharField(max_length=<span class="number">255</span>)</span><br><span class="line">    body_text = models.TextField()</span><br><span class="line">    pub_date = models.DateField()</span><br><span class="line">    mod_date = models.DateField()</span><br><span class="line">    authors = models.ManyToManyField(Author)<span class="comment">#Author 和 Entry 是多对多的关系</span></span><br><span class="line">    n_comments = models.IntegerField()</span><br><span class="line">    n_pingbacks = models.IntegerField()</span><br><span class="line">    rating = models.IntegerField()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(<span class="keyword">self</span>)</span></span>:              <span class="comment"># __unicode__ on Python 2</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.headline</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建对象</p>
-<ul>
-<li>一个模型类代表数据库中的一个表，一个模型类的实例代表这个数据库表中的一条特定的记录。</li>
-<li>使用关键字参数实例化模型实例来创建一个对象，然后调用save() 把它保存到数据库中。</li>
-<li><p>例子：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; from blog.models import Blog</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b = Blog(name=<span class="string">'Beatles Blog'</span>, tagline=<span class="string">'All the latest Beatles news.'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b.save()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>上面的代码在背后执行了SQL 的INSERT 语句。 <font color="red">在你显式调用save()之前，Django 不会访问数据库。</font></p>
-</li>
-</ul>
-</li>
-<li><p>保存ForeignKey和ManyToManyField字段</p>
-<ul>
-<li><p>更新ForeignKey 字段的方式和保存普通字段相同 — 只要把一个正确类型的对象赋值给该字段。 下面的例子更新一个Entry实例entry的blog属性，假设Entry和Blog已经有正确的实例保存在数据库中（所以我们可以像下面这样获取它们）：  </p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from blog<span class="selector-class">.models</span> import Blog, Entry   </span><br><span class="line"></span><br><span class="line">entry = Entry<span class="selector-class">.objects</span><span class="selector-class">.get</span>(pk=<span class="number">1</span>)    </span><br><span class="line">cheese_blog = Blog<span class="selector-class">.objects</span><span class="selector-class">.get</span>(name=<span class="string">"Cheddar Talk"</span>)    </span><br><span class="line">entry<span class="selector-class">.blog</span> = cheese_blog    </span><br><span class="line">entry.save()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新ManyToManyField 的方式有一些不同 — <font color="red">需要使用字段的add()方法来增加关联关系的一条记录。 </font>&gt;下面这个例子向entry对象添加Author类的实例joe：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from blog<span class="selector-class">.models</span> import Author</span><br><span class="line">&gt;&gt;&gt; joe = Author<span class="selector-class">.objects</span><span class="selector-class">.create</span>(name=<span class="string">"Joe"</span>)</span><br><span class="line">&gt;&gt;&gt; entry<span class="selector-class">.authors</span><span class="selector-class">.add</span>(joe)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为了在一条语句中，向ManyToManyField添加多条记录，可以在调用add()方法时传入多个参数，像这样：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; john = Author<span class="selector-class">.objects</span><span class="selector-class">.create</span>(name=<span class="string">"John"</span>)</span><br><span class="line">&gt;&gt;&gt; paul = Author<span class="selector-class">.objects</span><span class="selector-class">.create</span>(name=<span class="string">"Paul"</span>)</span><br><span class="line">&gt;&gt;&gt; george = Author<span class="selector-class">.objects</span><span class="selector-class">.create</span>(name=<span class="string">"George"</span>)</span><br><span class="line">&gt;&gt;&gt; ringo = Author<span class="selector-class">.objects</span><span class="selector-class">.create</span>(name=<span class="string">"Ringo"</span>)</span><br><span class="line">&gt;&gt;&gt; entry<span class="selector-class">.authors</span><span class="selector-class">.add</span>(john, paul, george, ringo)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>检索对象</p>
-<ul>
-<li>通过模型中的Manager构造一个QuerySet，来从你的数据库中获取对象。</li>
-<li><font color="red">  QuerySet表示从数据库中取出来的对象的集合。 </font>它可以含有零个、一个或者多个过滤器。 过滤器基于所给的参数限制查询的结果。 从SQL 的角度来看，QuerySet和SELECT 语句等价，过滤器是像WHERE 和LIMIT 一样的限制子句。</li>
-<li>你可以从模型的Manager那里取得QuerySet。 每个模型都至少有一个Manager，<font color="red">它默认命名为objects。  </font></li>
-<li>对于一个模型来说，Manager是QuerySets的主要来源。 例如， Blog.objects.all() 返回一个QuerySet，<font color="red">这个QuerySet包含数据库中所有Blog对象，即Blog表中所有的记录.</font></li>
-</ul>
-</li>
-<li><p>关于QuerySet及其他QuerySet方法</p>
-<ul>
-<li><p>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/models/querysets.html#django.db.models.query.QuerySet" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/models/querysets.html#django.db.models.query.QuerySet</a>  </p>
-<img src="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet1.png">  <img src="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet2.png"> <img src="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet3.png"> <img src="http://pdp5bkqjj.bkt.clouddn.com/images/QuerySet4.png"> 
-</li>
-</ul>
-</li>
-<li><p>检索所有对象</p>
-<ul>
-<li><p>获取一个表中所有对象的最简单的方式是全部获取。 可以使用Manager的all() 方法：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; all_entries = Entry<span class="selector-class">.objects</span><span class="selector-class">.all</span>()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>all()方法返回包含数据库中所有对象的一个QuerySet。</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>使用过滤器检索特定对象</p>
-<ul>
-<li><p>all() 方法返回了一个包含数据库表中所有记录QuerySet。 但在通常情况下，你往往想要获取的是完整数据集的一个子集。</p>
-</li>
-<li><p>要创建这样一个子集，你需要在原始的的QuerySet上增加一些过滤条件。 QuerySet两个最普遍的途径是：</p>
-<ul>
-<li>filter(**kwargs)<ul>
-<li>返回一个新的QuerySet，它包含满足查询参数的对象。</li>
-</ul>
-</li>
-<li><p>exclude(**kwargs)</p>
-<ul>
-<li>返回一个新的QuerySet，它包含不满足查询参数的对象。</li>
-</ul>
-</li>
-<li><p>举个例子，要获取年份为2006的所有文章的QuerySet，可以使用filter()方法：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Entry<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(pub_date__year=<span class="number">2006</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用默认的管理器，它相当于：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Entry<span class="selector-class">.objects</span><span class="selector-class">.all</span>().<span class="attribute">filter</span>(pub_date__year=<span class="number">2006</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>链式过滤器</p>
-<ul>
-<li>QuerySet的筛选结果本身还是QuerySet，所以可以将筛选语句链接在一起。 像这样：<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; Entry.objects.filter(</span><br><span class="line"><span class="built_in">..</span>.     <span class="attribute">headline__startswith</span>=<span class="string">'What'</span></span><br><span class="line"><span class="built_in">..</span>. ).exclude(</span><br><span class="line"><span class="built_in">..</span>.     <span class="attribute">pub_date__gte</span>=datetime.date.today()</span><br><span class="line"><span class="built_in">..</span>. ).filter(</span><br><span class="line"><span class="built_in">..</span>.     <span class="attribute">pub_date__gte</span>=datetime(2005, 1, 30)</span><br><span class="line"><span class="built_in">..</span>. )</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>QuerySet是惰性的</p>
-<ul>
-<li>QuerySets 是惰性执行的,创建QuerySet不会带来任何数据库的访问。一般来说，只有在“请求”QuerySet 的结果时才会到数据库中去获取它们。 当你确实需要结果时，QuerySet 通过访问数据库来求值。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>使用get()检索单个对象</p>
-<ul>
-<li><font color="red">filter() 始终给你一个QuerySet，</font>即使只有一个对象满足查询条件 —— 这种情况下，QuerySet将只包含一个元素。</li>
-<li><p>如果你知道只有一个对象满足你的查询，你可以使用Manager的get() 方法，<font color="red">它直接返回该对象：</font></p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; one_entry = Entry.objects.<span class="builtin-name">get</span>(<span class="attribute">pk</span>=1)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意，使用get() 和使用filter() 的切片[0] 有一点区别。 如果没有结果满足查询，get() 将引发一个DoesNotExist 异常。 这个异常是正在查询的模型类的一个属性 —— 所以在上面的代码中，如果没有主键(pk) 为1 的Entry对象，Django 将引发一个Entry.DoesNotExist 。</p>
-</li>
-<li><p>类似地，如果有多条记录满足get() 的查询条件，Django 也将报错。 这种情况将引发MultipleObjectsReturned，它同样是模型类自身的一个属性。</p>
-</li>
-</ul>
-</li>
-<li><p>限制QuerySet</p>
-<ul>
-<li>可以使用Python 的切片语法来限制QuerySet记录的数目 。 它等同于SQL 的OFFSET 和LIMIT 子句。</li>
-<li>例如:<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.all</span>()[:<span class="number">5</span>]</span><br><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.all</span>()[<span class="number">5</span>:<span class="number">10</span>]</span><br><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.all</span>()[:<span class="number">10</span>:<span class="number">2</span>]</span><br><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.order_by</span>(<span class="string">'headline'</span>)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>字段查找</p>
-<ul>
-<li>字段查询是指如何指定SQL WHERE 子句的内容。 它们通过QuerySet方法filter()、exclude() 和 get() 的关键字参数指定。</li>
-<li><p><font color="red">查询的关键字参数的基本形式是field__lookuptype=value。 （中间是两个下划线）。</font>  像这样：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; Entry.objects.filter(pub_date__lte=<span class="string">'2006-01-01'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; 翻译成SQL（大体）是：</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; SELECT * FROM blog_entry WHERE pub_date &lt;= <span class="string">'2006-01-01'</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查询条件中指定的字段必须是模型字段的名称。 但有一个例外，<font color="red">对于ForeignKey你可以使用字段名加上_id 后缀。 在这种情况下，该参数的值应该是外键的原始值</font> 。 像这样：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(blog_id=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果你传递的是一个不合法的参数，查询函数将引发 TypeError。</p>
-</li>
-<li><p>数据库API支持大约二十种查找类型；参考文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/models/querysets.html#field-lookups" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/models/querysets.html#field-lookups</a> ；<font color="red">搜索定位：Field查找。</font></p>
-</li>
-</ul>
-</li>
-<li><p><font color="red">跨关联关系的查询</font></p>
-<ul>
-<li>Django 提供一种强大而又直观的方式来“处理”查询中的关联关系，它在后台自动帮你处理JOIN。 <font color="red">若要跨越关联关系，只需使用关联的模型字段的名称，并使用双下划线分隔，直至你想要的字段</font>：</li>
-<li><p>下面这个例子获取所有Blog 的name 为’Beatles Blog’ 的Entry 对象：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(blog__name=<span class="string">'Beatles Blog'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>它还可以反向工作。 若要引用一个“反向”的关系，只需要使用该模型的小写的名称。<br>下面的示例获取所有的Blog 对象，它们至少有一个Entry 的headline包含’Lennon’：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; Blog<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(entry__headline__contains=<span class="string">'Lennon'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果你在多个关联关系过滤而且其中某个中介模型没有满足过滤条件的值，Django 将把它当做一个空的（所有的值都为NULL）但是合法的对象。 这意味着不会有错误引发。 例如，在下面的过滤器中：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Blog<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(entry__authors__name=<span class="string">'Lennon'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>（如果有一个相关联的Author 模型），如果没有author与entry关联，那么它将当作其没有name，而不会因为没有author 引发一个错误。 通常，这就是你想要的。 唯一可能让你困惑的是当你使用isnull 的时候。 因此：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Blog.objects.filter(<span class="attribute">entry__authors__name__isnull</span>=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回的Blog对象包括author的name为空的对象，以及entry上的author为空的对象。 如果你不需要后者，你可以这样写：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Blog.objects.filter(<span class="attribute">entry__authors__isnull</span>=<span class="literal">False</span>, <span class="attribute">entry__authors__name__isnull</span>=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>跨越多值的关联关系</p>
-<ul>
-<li><p>选择所有包含 <font color="red">同时满足两个条件的entry的blog</font> ，这两个条件是headline 包含Lennon 和发表时间是2008 <font color="red">（同一个entry 满足两个条件）</font> ，我们的代码是：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Blog.objects.filter(<span class="attribute">entry__headline__contains</span>=<span class="string">'Lennon'</span>, <span class="attribute">entry__pub_date__year</span>=2008)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>要选择所有这样的blog，有一个entry的headline包含“Lennon”和有一个entry发表时间是2008，我们将这样编写：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Blog<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(entry__headline__contains=<span class="string">'Lennon'</span>).<span class="attribute">filter</span>(entry__pub_date__year=<span class="number">2008</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>假设这里有一个blog拥有一条包含’Lennon’的entries条目和一条来自2008的entries条目,但是没有一条来自2008并且包含”Lennon”的entries条目。 第一个查询不会返回任何blog，第二个查询将会返回一个blog。</p>
-</li>
-<li><p>在第二个例子中， 第一个filter限定查询集为所有与headline包含“Lennon”的entry关联的blog。 第二个filter进一步限定查询集中的blog，这些blog关联的entry 的发表时间是2008。 第二个filter 过滤出来的entry 与第一个filter 过滤出来的entry 可能相同也可能不同。 <font color="red">我们用每个filter语句过滤的是Blog，而不是Entry。</font></p>
-</li>
-<li><p>跨越多值关系的filter() 查询的行为，与exclude() 实现的不同。 单个exclude() 调用中的条件不必引用同一个记录。</p>
-</li>
-<li><p>例如，下面的查询将<font color="red">排除两种 </font>entry的blog，headline中包含“Lennon”的entry和在2008年发布的entry：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Blog.objects.exclude(</span><br><span class="line">    <span class="attribute">entry__headline__contains</span>=<span class="string">'Lennon'</span>,</span><br><span class="line">    <span class="attribute">entry__pub_date__year</span>=2008,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然而，这与使用filter() 的行为不同，它不是排除<font color="red">同时满足</font>两个条件的Entry。 为了实现这点，即选择的Blog中不包含在2008年发布且healine 中带有“Lennon” 的Entry，你需要编写两个查询：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Blog.objects.exclude(</span><br><span class="line">    <span class="attribute">entry__in</span>=Entry.objects.filter(</span><br><span class="line">        <span class="attribute">headline__contains</span>=<span class="string">'Lennon'</span>,</span><br><span class="line">        <span class="attribute">pub_date__year</span>=2008,</span><br><span class="line">    ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>过滤器可以引用模型的字段</p>
-<ul>
-<li><p>查询表达式</p>
-<ul>
-<li>文档：<a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/models/expressions.html#django.db.models.F" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/models/expressions.html#django.db.models.F</a>  <img src="http://pdp5bkqjj.bkt.clouddn.com/images/F.png">
-</li>
-</ul>
-</li>
-<li><p>将模型的一个字段与同一个模型的另外一个字段进行比较</p>
-</li>
-<li><p>Django 提供F表达式 来允许这样的比较。 <font color="red">F() 返回的实例用作查询内部对模型字段的引用。</font> 这些引用可以用于查询的filter 中来<font color="red">比较相同模型实例上</font>不同字段之间值的比较。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例如，为了查找comments 数目多于pingbacks 的Entry，我们将构造一个F() 对象来引用pingback 数目，并在查询中使用该F() 对象：</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; from django<span class="selector-class">.db</span><span class="selector-class">.models</span> import F</span><br><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(n_comments__gt=F(<span class="string">'n_pingbacks'</span>))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Django 支持对F() 对象使用加法、减法、乘法、除法、取模以及幂计算等算术操作，两个操作数可以都是常数和其它F() 对象。</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">为了查找comments 数目比pingbacks 两倍还要多的<span class="keyword">Entry</span>，我们将查询修改为：</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">Entry</span>.objects.filter(n_comments__gt=F(<span class="symbol">'n_pingbacks</span>') * <span class="number">2</span>)</span><br><span class="line">  </span><br><span class="line">为了查询rating 比pingback 和comment 数目总和要小的<span class="keyword">Entry</span>，我们将这样查询：</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">Entry</span>.objects.filter(rating__lt=F(<span class="symbol">'n_comments</span>') + F(<span class="symbol">'n_pingbacks</span>'))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>你还可以在F() 对象中使用双下划线标记来跨越关联关系。 带有双下划线的F() 对象将引入任何需要的join 操作以访问关联的对象。 </p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例如，如要获取author 的名字与blog 名字相同的Entry，我们可以这样查询：</span><br><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(authors__name=F(<span class="string">'blog__name'</span>))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对于date 和date/time 字段，你可以给它们加上或减去一个timedelta 对象。 </p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">下面的例子将返回发布超过<span class="number">3</span>天后被修改的所有Entry：</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; from datetime import timedelta</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; Entry.objects.filter(mod_date__gt=F(<span class="string">'pub_date'</span>) + timedelta(days=<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>pk查找快捷方式</p>
-<ul>
-<li><p>为了方便，Django 提供一个查询快捷方式pk ，它表示“primary key” 的意思</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在示例Blog模型中，主键pk是id字段，所以这三个语句是等价的：</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; Blog.objects.<span class="builtin-name">get</span>(<span class="attribute">id__exact</span>=14) # Explicit form</span><br><span class="line">&gt;&gt;&gt; Blog.objects.<span class="builtin-name">get</span>(<span class="attribute">id</span>=14) # __exact is implied</span><br><span class="line">&gt;&gt;&gt; Blog.objects.<span class="builtin-name">get</span>(<span class="attribute">pk</span>=14) # pk implies id__exact</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>pk的使用并不限于__ exact查询 - 任何查询词都可以与pk组合来执行查询一个模型的primary key：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Get blogs entries with id <span class="number">1</span>, <span class="number">4</span> and <span class="number">7</span></span><br><span class="line">&gt;&gt;&gt; Blog.objects.filter(pk__in=[<span class="number">1</span>,<span class="number">4</span>,<span class="number">7</span>])</span><br><span class="line"></span><br><span class="line"># Get all blog entries with id &gt; <span class="number">14</span></span><br><span class="line">&gt;&gt;&gt; Blog.objects.filter(pk__gt=<span class="number">14</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>pk查询在join 中也可以工作。 例如，下面三个语句是等同的：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; Entry.objects.filter(blog__id__exact=<span class="number">3</span>) <span class="comment"># Explicit form</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; Entry.objects.filter(blog__id=<span class="number">3</span>)        <span class="comment"># __exact is implied</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; Entry.objects.filter(blog__pk=<span class="number">3</span>)        <span class="comment"># __pk implies __id__exact</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>在LIKE语句中转义百分号和下划线</p>
-<ul>
-<li><p>与endswith SQL 语句等同的字段查询（LIKE、 istartswith、isendswith、isexact、 LIKE、startswith 和contains）将自动转义在contains 语句中使用的两个特殊的字符 —— 百分号和下划线。 （在LIKE 语句中，百分号通配符表示多个字符，下划线通配符表示单个字符）。</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例如，要获取包含一个百分号的所有的Entry，只需要像其它任何字符一样使用百分号：</span><br><span class="line">&gt;&gt;&gt; Entry.objects.filter(headline__contains=<span class="string">'%'</span>)</span><br><span class="line"> </span><br><span class="line">Django照顾你的引用；生成的SQL将如下所示：</span><br><span class="line"><span class="keyword">SELECT</span> <span class="params">...</span> <span class="keyword">WHERE</span> headline LIKE <span class="string">'%\%%'</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>缓存和QuerySet</p>
-<ul>
-<li>每个QuerySet都包含一个缓存来最小化对数据库的访问。 理解它是如何工作的将让你编写最高效的代码。</li>
-<li><p>在一个新创建的QuerySet中，缓存为空。 首次对QuerySet进行求值 —— 同时发生数据库查询 ——Django <font color="red">将保存查询的结果到QuerySet的缓存中并返回明确请求的结果</font>（例如，如果正在迭代QuerySet，则返回下一个结果）。 接下来对该QuerySet 的求值将重用缓存的结果。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">请牢记这个缓存行为，因为对QuerySet使用不当的话，它会坑你的。 例如，下面的语句创建两个QuerySet，对它们求值，然后扔掉它们：</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>([e.headline <span class="keyword">for</span> e <span class="keyword">in</span> Entry.objects.all()])</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>([e.pub_date <span class="keyword">for</span> e <span class="keyword">in</span> Entry.objects.all()])</span></span><br><span class="line">这意味着相同的数据库查询将执行两次，显然倍增了你的数据库负载。 同时，还有可能两个结果列表并不包含相同的数据库记录，因为在两次请求期间有可能有Entry被添加进来或删除掉。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">为了避免这个问题，只需保存QuerySet并重新使用它：</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; queryset = Entry.objects.all()</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>([p.headline <span class="keyword">for</span> p <span class="keyword">in</span> queryset]) <span class="comment"># Evaluate the query set.</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>([p.pub_date <span class="keyword">for</span> p <span class="keyword">in</span> queryset]) <span class="comment"># Re-use the cache from the evaluation.</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>当QuerySet不缓存</p>
-<ul>
-<li><p>查询集不会永远缓存它们的结果。 当只对查询集的部分进行求值时会检查缓存， 但是如果这个部分不在缓存中，那么接下来查询返回的记录都将不会被缓存。 特别地，这意味着使用切片或索引来limiting the queryset将不会填充缓存。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">例如，重复获取查询集对象中一个特定的索引将每次都查询数据库：</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; queryset = Entry.objects.all()</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(queryset[5]) <span class="comment"># Queries the database</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(queryset[5]) <span class="comment"># Queries the database again</span></span></span><br><span class="line"></span><br><span class="line">然而，如果已经对全部查询集求值过，则将检查缓存：</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; queryset = Entry.objects.all()</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; [entry <span class="keyword">for</span> entry <span class="keyword">in</span> queryset] <span class="comment"># Queries the database</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(queryset[5]) <span class="comment"># Uses cache</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(queryset[5]) <span class="comment"># Uses cache</span></span></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">下面是一些其它例子，它们会使得全部的查询集被求值并填充到缓存中：</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; [entry <span class="keyword">for</span> entry <span class="keyword">in</span> queryset]</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; bool(queryset)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; entry <span class="keyword">in</span> queryset</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; list(queryset)</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>使用Q对象进行复杂查找</p>
-<ul>
-<li>在filter()中的关键字参数查询 — — 是“AND”的关系。 如果你需要执行更复杂的查询（例如OR 语句），你可以使用Q对象。</li>
-<li>Q object (django.db.models.Q) 对象用于封装一组关键字参数。 这些关键字参数就是上文“字段查询” 中所提及的那些。<ul>
-<li>文档： <a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/models/querysets.html#django.db.models.Q" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/models/querysets.html#django.db.models.Q</a>  搜索：Q()对象</li>
-</ul>
-</li>
-<li><p>Q对象可以使用&amp;和|操作符组合起来。 当一个操作符在两个Q 对象上使用时，它产生一个新的Q 对象。</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例如，下面的语句产生一个<span class="string">"question__startswith"</span> 对象，表示两个Q 查询的“<span class="literal">OR</span>” ：</span><br><span class="line">Q(question__startswith=<span class="string">'Who'</span>) | Q(question__startswith=<span class="string">'What'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">它等同于下面的SQL <span class="keyword">WHERE</span> 子句：</span><br><span class="line"><span class="keyword">WHERE</span> question LIKE <span class="string">'Who%'</span> <span class="literal">OR</span> question LIKE <span class="string">'What%'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>你可以组合&amp; 和| 操作符以及使用括号进行分组来编写任意复杂的Q 对象。 同时，~ 对象可以使用NOT 操作符取反，</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">这允许组合正常的查询和取反(Q) 查询：</span><br><span class="line">Q(<span class="attribute">question__startswith</span>=<span class="string">'Who'</span>) | ~Q(<span class="attribute">pub_date__year</span>=2005)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>每个接受关键字参数的查询函数（例如filter()、exclude()、get()）都可以传递一个或多个Q 对象作为位置（不带名的）参数。 如果一个查询函数有多个Q 对象参数，这些参数的逻辑关系为“AND”。 像这样：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Poll.objects.get(</span><br><span class="line">    Q(question__startswith='Who'),</span><br><span class="line">    Q(pub_date=date(<span class="number">2005</span>, <span class="number">5</span>, <span class="number">2</span>)) | Q(pub_date=date(<span class="number">2005</span>, <span class="number">5</span>, <span class="number">6</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">...大致翻译成SQL：</span><br><span class="line">SELECT * from polls WHERE question LIKE 'Who%'</span><br><span class="line">    AND (pub_date = '<span class="number">2005</span><span class="number">-05</span><span class="number">-02</span>' OR pub_date = '<span class="number">2005</span><span class="number">-05</span><span class="number">-06</span>')</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查询函数可以混合使用Q和关键字参数。 所有提供给查询函数的参数（关键字参数或Q 对象）都将”AND”在一起。<font color="red"> 但是，如果出现Q 对象，它必须位于所有关键字参数的前面。 </font></p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">像这样：</span><br><span class="line">Poll.objects.<span class="builtin-name">get</span>(</span><br><span class="line">    Q(<span class="attribute">pub_date</span>=date(2005, 5, 2)) | Q(<span class="attribute">pub_date</span>=date(2005, 5, 6)),</span><br><span class="line">    <span class="attribute">question__startswith</span>=<span class="string">'Who'</span>,</span><br><span class="line">)</span><br><span class="line"><span class="built_in">..</span>.将是一个有效的查询，相当于前面的例子；但：</span><br><span class="line"></span><br><span class="line"><span class="comment"># INVALID QUERY</span></span><br><span class="line">Poll.objects.<span class="builtin-name">get</span>(</span><br><span class="line">    <span class="attribute">question__startswith</span>=<span class="string">'Who'</span>,</span><br><span class="line">    Q(<span class="attribute">pub_date</span>=date(2005, 5, 2)) | Q(<span class="attribute">pub_date</span>=date(2005, 5, 6))</span><br><span class="line">)</span><br><span class="line"><span class="built_in">..</span>.不会有效</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>比较对象</p>
-<ul>
-<li>为了比较两个模型实例，只需要使用标准的Python 比较操作符，即双等于符号：==。 在后台，它会比较两个模型主键的值。<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">利用上面的Entry 示例，下面两个语句是等同的：</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; some_entry == other_entry</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; some_entry.id == other_entry.id</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">如果模型的主键不叫id，也没有问题。 比较将始终使用主键，无论它叫什么。 例如，如果模型的主键字段叫做name，下面的两条语句是等同的：</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; some_obj == other_obj</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; some_obj.name == other_obj.name</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>删除对象</p>
-<ul>
-<li><p>删除方法，为了方便，就取名为delete()。 该方法立即删除对象，并返回一个字典，该字典包含着删除的对象数量和每个对象类型的删除次数。 例如：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; e.delete()</span><br><span class="line">(<span class="number">1</span>, &#123;<span class="string">'weblog.Entry'</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>你还可以批量删除对象。 每个QuerySet 都有一个delete() 方法，它将删除该QuerySet中的所有成员。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如，下面的语句删除pub_date 为<span class="number">2005</span> 的所有Entry 对象：</span><br><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.filter</span>(pub_date__year=<span class="number">2005</span>).delete()</span><br><span class="line">(<span class="number">5</span>, &#123;<span class="string">'webapp.Entry'</span>: <span class="number">5</span>&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>当Django 删除一个对象时，它默认使用SQL ON DELETE CASCADE 约束 —— 换句话讲，任何有外键指向要删除对象的对象将一起删除。 像这样：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b = Blog.objects.<span class="builtin-name">get</span>(<span class="attribute">pk</span>=1)</span><br><span class="line"><span class="comment"># This will delete the Blog and all of its Entry objects.</span></span><br><span class="line">b.delete()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意，delete()是唯一没有在Manager上暴露出来的QuerySet方法。 这是一个安全机制来防止你意外地请求Entry.objects.delete()，而删除所有 的条目。 <font color="red">如果你确实想删除所有的对象，你必须明确地请求一个完全的查询集：</font></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Entry</span><span class="selector-class">.objects</span><span class="selector-class">.all</span>()<span class="selector-class">.delete</span>()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>一次更新多个对象  </p>
-<ul>
-<li><p>有时你想为一个QuerySet中所有对象的某个字段都设置一个特定的值。 这时你可以使用update() 方法。 像这样：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Update <span class="keyword">all</span> the headlines <span class="keyword">with</span> pub_date <span class="keyword">in</span> <span class="number">2007</span></span><br><span class="line"><span class="keyword">Entry</span>.objects.filter(pub_date__year=<span class="number">2007</span>).update(headline=<span class="symbol">'Everything</span> <span class="keyword">is</span> the same')</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>你只可以对非关联字段和ForeignKey 字段使用这个方法。 若要更新一个非关联字段，只需提供一个新的常数值。 <font color="red">若要更新ForeignKey 字段，需设置新的值为你想指向的新的模型实例</font>。 像这样：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; b = Blog.objects.<span class="builtin-name">get</span>(<span class="attribute">pk</span>=1)</span><br><span class="line"><span class="comment"># Change every Entry so that it belongs to this Blog.</span></span><br><span class="line">&gt;&gt;&gt; Entry.objects.all().update(<span class="attribute">blog</span>=b)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>update() 方法会立即执行并返回查询匹配的行数（如果有些行已经具有新的值，返回的行数可能和被更新的行数不相等）。 正在更新的QuerySet的唯一限制是它只能访问一个数据库表：模型的主表。 <font color="red">你可以根据关联的字段过滤，但是你只能更新模型主表中的列。</font> 例如：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; b = Blog.objects.get(pk=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># Update all the headlines belonging to this Blog.</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; Entry.objects.select_related().filter(blog=b).update(headline=<span class="string">'Everything is the same'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>要注意update() 方法会直接转换成一个SQL 语句。 它是一个批量的直接更新操作。 它不会运行模型的save() 方法，或者发出pre_save 或 post_save信号（调用save()方法产生）或者查看auto_now 字段选项。 如果你想保存QuerySet中的每个条目并确保每个实例的save() 方法都被调用，你不需要使用任何特殊的函数来处理。 只需要迭代它们并调用save()：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">item</span> <span class="keyword">in</span> my_queryset:</span><br><span class="line">    <span class="built_in">item</span>.save()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对update 的调用也可以使用F expressions 来根据模型中的一个字段更新另外一个字段。 这对于在当前值的基础上加上一个值特别有用。 例如，增加Blog 中每个Entry 的pingback 个数：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; Entry<span class="selector-class">.objects</span><span class="selector-class">.all</span>().update(n_pingbacks=F(<span class="string">'n_pingbacks'</span>) + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然而，与filter 和exclude 子句中的F() 对象不同，<font color="red">在update 中你不可以使用F() 对象引入join —— 你只可以引用正在更新的模型的字段</font>。 如果你尝试使用F()对象引入一个join，将引发一个FieldError：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This will raise a FieldError</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; Entry.objects.update(headline=F(<span class="string">'blog__name'</span>))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><font color="red">一对多关系</font>  
-
-<ul>
-<li><font color="red">正向查询：</font></li>
-<li><p>如果一个模型具有ForeignKey，那么该模型的实例将可以通过属性访问关联的（外部）对象。 例如：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; e = Entry.objects.get(id=<span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; e.blog <span class="comment"># Returns the related Blog object.</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>你可以通过外键属性获取和设置。 和你预期的一样，对外键的修改不会保存到数据库中直至你调用save()。 例如：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; e = Entry.objects.get(id=<span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; e.blog = some_blog</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; e.save()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果ForeignKey 字段有NULL 设置（即它允许null=True 值），你可以分配None 来删除对应的关联性。  例如：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; e = Entry.objects.get(id=<span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; e.blog = None</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; e.save() <span class="comment"># "UPDATE blog_entry SET blog_id = NULL ...;"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一对多关联关系的前向访问在第一次访问关联的对象时被缓存。 以后对同一个对象的外键的访问都使用缓存。  例如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; e = Entry.objects.get(id=2)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(e.blog)  <span class="comment"># Hits the database to retrieve the associated Blog.</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(e.blog)  <span class="comment"># Doesn't hit the database; uses cached version.</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意select_related() QuerySet方法递归地预填充所有的一对多关系到缓存中。 例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
-</li>
-<li><font color="red">反向查询</font></li>
-<li><p>如果模型有一个ForeignKey，那么该ForeignKey所指的模型实例可以通过一个Manager返回第一个模型的所有实例。 默认情况下，这个Manager的名字为FOO_set，其中FOO是源模型的小写名称。 该Manager返回QuerySets，可以用上一节提到的方式进行过滤和操作。例如：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; b = Blog.objects.get(id=<span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b.entry_set.all() <span class="comment"># Returns all Entry objects related to Blog.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># b.entry_set is a Manager that returns QuerySets.</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b.entry_set.filter(headline__contains=<span class="string">'Lennon'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b.entry_set.count()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>你可以在ForeignKey 定义时设置related_name 参数来覆盖FOO_set 的名称。 例如，如果Entry模型更改为blog = ForeignKey(Blog, on_delete=models.CASCADE, related_name=’entries’)，上述示例代码如下所示：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; b = Blog.objects.get(id=<span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b.entries.all() <span class="comment"># Returns all Entry objects related to Blog.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># b.entries is a Manager that returns QuerySets.</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b.entries.filter(headline__contains=<span class="string">'Lennon'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b.entries.count()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>处理关联对象其他方法</p>
-<ul>
-<li><a href="https://yiyibooks.cn/xx/Django_1.11.6/ref/models/relations.html" target="_blank" rel="noopener">https://yiyibooks.cn/xx/Django_1.11.6/ref/models/relations.html</a></li>
-<li>add（），create（），remove（），set（）</li>
-</ul>
-</li>
-<li><font color="red">这一节中提到的每个”反向“操作都会立即对数据库产生作用。 每个添加、创建和删除操作都会立即并自动保存到数据库中。</font>
-
-
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>多对多关系</p>
-<ul>
-<li>多对多关系的两端都会自动获得访问另一端的API。 这些API 的工作方式与上面提到的“方向”一对多关系一样。</li>
-<li>唯一的区别在于属性的命名：定义 ManyToManyField 的模型使用该字段的属性名称，而“反向”模型使用源模型的小写名称加上’_set’ （和一对多关系一样）。</li>
-<li><p>例如：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">e = Entry.objects.<span class="builtin-name">get</span>(<span class="attribute">id</span>=3)</span><br><span class="line">e.authors.all() # Returns all Author objects <span class="keyword">for</span> this Entry.</span><br><span class="line">e.authors.count()</span><br><span class="line">e.authors.filter(<span class="attribute">name__contains</span>=<span class="string">'John'</span>)</span><br><span class="line"></span><br><span class="line">a = Author.objects.<span class="builtin-name">get</span>(<span class="attribute">id</span>=5)</span><br><span class="line">a.entry_set.all() # Returns all Entry objects <span class="keyword">for</span> this Author.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>类似ForeignKey，ManyToManyField 可以指定related_name。 在上面的例子中，如果entry_set 中的ManyToManyField 指定entries，那么Entry 实例将使用 related_name=’entries’ 属性而不是Author。</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>一对一关系</p>
-<ul>
-<li>一对一关系与多对一关系非常相似。 如果你在模型中定义一个OneToOneField，该模型的实例将可以通过该模型的一个简单属性访问关联的模型。</li>
-<li><p>例如：</p>
-<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="type">EntryDetail</span>(<span class="title">models</span>.<span class="type">Model</span>):</span></span><br><span class="line"><span class="class">entry = models.<span class="type">OneToOneField</span>(<span class="type">Entry</span>, <span class="title">on_delete</span>=<span class="title">models</span>.<span class="type">CASCADE</span>)</span></span><br><span class="line"><span class="class">details = models.<span class="type">TextField</span>()</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">ed = <span class="type">EntryDetail</span>.objects.get(<span class="title">id</span>=2)</span></span><br><span class="line"><span class="class">ed.entry # <span class="type">Returns</span> the related <span class="type">Entry</span> object.</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在“反向”查询中有所不同。 一对一关系中的关联模型同样具有一个Manager对象，但是该Manager表示一个单一的对象而不是对象的集合：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e = Entry.objects.<span class="keyword">get</span>(<span class="built_in">id</span>=<span class="number">2</span>)</span><br><span class="line">e.entrydetail <span class="comment"># returns the related EntryDetail object</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="url"><a href="#url" class="headerlink" title="url"></a>url</h3><h3 id="视图（View）"><a href="#视图（View）" class="headerlink" title="视图（View）"></a>视图（View）</h3><h3 id="模板（templates）"><a href="#模板（templates）" class="headerlink" title="模板（templates）"></a>模板（templates）</h3><h3 id="setting文件"><a href="#setting文件" class="headerlink" title="setting文件"></a>setting文件</h3>
+<h2 id="Widgets-窗口小部件"><a href="#Widgets-窗口小部件" class="headerlink" title="Widgets 窗口小部件"></a>Widgets 窗口小部件</h2><h2 id="使用ModelForm创建表单"><a href="#使用ModelForm创建表单" class="headerlink" title="使用ModelForm创建表单"></a>使用ModelForm创建表单</h2>
       
 
       
@@ -639,8 +302,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/08/22/Django-基础篇1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Django-基础篇1</div>
+    <a href="/2018/08/30/Django-基础篇4-模板/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Django-基础篇4-模板</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -667,7 +330,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令："><span class="toc-number">1.</span> <span class="toc-text">常用命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型（Model）"><span class="toc-number">2.</span> <span class="toc-text">模型（Model）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字段类型和字段操作"><span class="toc-number">2.1.</span> <span class="toc-text">字段类型和字段操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#model的使用"><span class="toc-number">2.2.</span> <span class="toc-text">model的使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url"><span class="toc-number">3.</span> <span class="toc-text">url</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视图（View）"><span class="toc-number">4.</span> <span class="toc-text">视图（View）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板（templates）"><span class="toc-number">5.</span> <span class="toc-text">模板（templates）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setting文件"><span class="toc-number">6.</span> <span class="toc-text">setting文件</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#表单字段"><span class="toc-number">1.</span> <span class="toc-text">表单字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表单API"><span class="toc-number">2.</span> <span class="toc-text">表单API</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概述："><span class="toc-number"></span> <span class="toc-text">概述：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一个简单的表单"><span class="toc-number">1.</span> <span class="toc-text">一个简单的表单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在Django中创建一个表单"><span class="toc-number">2.</span> <span class="toc-text">在Django中创建一个表单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于Django的Form类的更多内容"><span class="toc-number">3.</span> <span class="toc-text">关于Django的Form类的更多内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用表单模板"><span class="toc-number">4.</span> <span class="toc-text">使用表单模板</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Widgets-窗口小部件"><span class="toc-number"></span> <span class="toc-text">Widgets 窗口小部件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用ModelForm创建表单"><span class="toc-number"></span> <span class="toc-text">使用ModelForm创建表单</span></a>
                     </div>
                 </span>
             </div>
